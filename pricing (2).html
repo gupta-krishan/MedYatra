@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="shortcut icon" href="favicon.svg"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Plans & Pricing — MedYatra</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8faf9;
+  --g5:#f0f9f4;--g10:#e0f3ea;--g20:#b8e4cc;--g60:#2fa866;--g80:#1a7244;--gd:#0e4a2c;
+  --b5:#f0f6fd;--b10:#ddeefa;--b20:#b0d4f5;--b60:#2e7dd4;--b80:#1a5299;
+  --n5:#f5f7f6;--n10:#eaeeec;--n20:#d0d8d4;--n60:#5e7269;
+  --text:#0f1f18;--tmid:#3d5548;--tsoft:#6b8278;
+  --border:rgba(15,80,50,0.1);
+  --rs:8px;--rm:14px;--rl:22px;
+  --ss:0 2px 12px rgba(15,80,50,0.07);--sm:0 6px 28px rgba(15,80,50,0.1);--sl:0 16px 60px rgba(15,80,50,0.13);
+  --fd:'Cormorant Garamond',Georgia,serif;--fb:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:66px;display:flex;align-items:center;padding:0 clamp(1rem,4vw,3rem);gap:1.5rem}
+.nav-logo{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--gd);text-decoration:none;flex-shrink:0}
+.nav-logo .a{color:var(--g60)}
+.nav-links{display:flex;align-items:center;list-style:none;flex:1;gap:0}
+.nav-links a{display:block;padding:6px 15px;text-decoration:none;color:var(--tmid);font-size:0.88rem;font-weight:500;border-radius:30px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.act{background:var(--g5);color:var(--g80)}
+.nav-cta{margin-left:auto;background:var(--g60);color:white;border:none;border-radius:30px;padding:9px 20px;font-family:var(--fb);font-size:0.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all 0.2s;flex-shrink:0;cursor:pointer}
+.nav-cta:hover{background:var(--g80)}
+.nav-cta .chip{background:rgba(255,255,255,0.22);border-radius:20px;padding:2px 9px;font-size:0.79rem;font-weight:700}
+@media(max-width:700px){.nav-links{display:none}.nav-logo{font-size:1.3rem}}
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+.page-hero{background:linear-gradient(150deg,var(--g5),var(--b5));padding:70px 0 60px;text-align:center;border-bottom:1px solid var(--border)}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--g60);background:white;border:1px solid var(--g20);border-radius:30px;padding:5px 14px;margin-bottom:1rem}
+h1{font-family:var(--fd);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:700;color:var(--gd);margin-bottom:0.7rem}
+h2{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--gd)}
+.pricing-section{padding:70px 0 80px}
+.pricing-grid{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:20px;align-items:start;margin-top:3rem}
+@media(max-width:860px){.pricing-grid{grid-template-columns:1fr;max-width:460px;margin:3rem auto 0}}
+.pricing-card{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:2rem 1.8rem;position:relative;box-shadow:var(--ss)}
+.pricing-card.featured{border:2px solid var(--g60);box-shadow:var(--sl);transform:scale(1.02)}
+@media(max-width:860px){.pricing-card.featured{transform:none}}
+.featured-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--g60),var(--b60));color:white;border-radius:20px;padding:5px 18px;font-size:0.74rem;font-weight:700;white-space:nowrap}
+.plan-tier{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--tsoft);margin-bottom:0.6rem}
+.plan-price{font-family:var(--fd);font-size:3.4rem;font-weight:700;color:var(--gd);line-height:1}
+.plan-price sup{font-size:1.5rem;vertical-align:top;margin-top:0.4rem}
+.plan-billing{font-size:0.8rem;color:var(--tsoft);margin:0.3rem 0 1.4rem}
+.plan-tagline{font-size:0.88rem;color:var(--tmid);margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px solid var(--n10)}
+.features-list{list-style:none;margin-bottom:2rem}
+.features-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--n10);font-size:0.88rem;color:var(--tmid)}
+.features-list li:last-child{border-bottom:none}
+.fch{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px}
+.fcg{background:var(--g10);color:var(--g80)}
+.fcb{background:var(--b10);color:var(--b80)}
+.fcn{background:var(--n10);color:var(--n60)}
+.feat-text strong{font-weight:600;color:var(--text);display:block}
+.feat-text span{font-size:0.79rem;color:var(--tsoft)}
+.btn-plan{display:block;width:100%;border-radius:30px;padding:14px;font-family:var(--fb);font-size:0.95rem;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;border:none;transition:all 0.18s}
+.btn-main{background:linear-gradient(135deg,var(--g60),var(--b60));color:white;box-shadow:0 6px 20px rgba(47,168,102,0.28)}
+.btn-main:hover{opacity:0.92;transform:translateY(-1px)}
+.btn-sec{background:white;color:var(--g60);border:1.5px solid var(--g20)}
+.btn-sec:hover{background:var(--g5);border-color:var(--g60)}
+.btn-blue{background:white;color:var(--b60);border:1.5px solid var(--b20)}
+.btn-blue:hover{background:var(--b5);border-color:var(--b60)}
+/* Comparison table */
+.comp-section{background:var(--n5);padding:60px 0}
+.comp-table{background:white;border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sm)}
+.comp-table table{width:100%;border-collapse:collapse}
+.comp-table th{padding:13px 16px;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--tsoft);text-align:center;border-bottom:2px solid var(--n10)}
+.comp-table th:first-child{text-align:left;color:var(--text)}
+.comp-table th.best{background:var(--g5);color:var(--g80)}
+.comp-table td{padding:11px 16px;font-size:0.87rem;color:var(--tmid);border-bottom:1px solid var(--n10);text-align:center}
+.comp-table td:first-child{text-align:left;font-weight:500;color:var(--text)}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:var(--n5)}
+.comp-table .bc{background:rgba(46,168,102,0.03)}
+.tick{color:var(--g60);font-size:1.05rem}
+.cross{color:var(--n40)}
+/* FAQ */
+.faq-section{padding:60px 0}
+.faq-list{max-width:700px;margin:2rem auto 0}
+.faq-item{background:white;border:1px solid var(--border);border-radius:var(--rm);margin-bottom:9px;overflow:hidden}
+.faq-q{padding:1rem 1.3rem;font-weight:600;font-size:0.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);user-select:none}
+.faq-q:hover{background:var(--g5)}
+.faq-icon{font-size:1.2rem;color:var(--g60);transition:transform 0.2s;flex-shrink:0}
+.faq-a{display:none;padding:0 1.3rem 1rem;font-size:0.87rem;color:var(--tsoft);line-height:1.65}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,40,25,0.65);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex}
+.modal{background:white;border-radius:var(--rl);width:90%;max-width:490px;position:relative;box-shadow:var(--sl);animation:su 0.25s ease;max-height:92vh;overflow-y:auto}
+@keyframes su{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:13px;right:13px;background:var(--n10);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--tsoft);z-index:10;transition:background 0.15s}
+.modal-close:hover{background:var(--n20)}
+.mstep{padding:1.8rem 1.8rem 1.4rem}
+.mstep.hidden{display:none}
+.m-title{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--gd);margin-bottom:0.25rem}
+.m-sub{font-size:0.83rem;color:var(--tsoft);margin-bottom:1.3rem}
+.plan-pill{background:var(--g5);border:1px solid var(--g20);border-radius:var(--rm);padding:0.85rem 1.1rem;margin-bottom:1.4rem;display:flex;justify-content:space-between;align-items:center}
+.pp-name{font-weight:700;font-size:0.9rem;color:var(--gd)}
+.pp-price{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--g60)}
+.fg{margin-bottom:0.9rem}
+.fg label{display:block;font-size:0.79rem;font-weight:600;color:var(--n60);margin-bottom:4px}
+.fg input,.fg select{width:100%;border:1.5px solid var(--n20);border-radius:var(--rs);padding:9px 13px;font-family:var(--fb);font-size:0.88rem;color:var(--text);background:white;outline:none;transition:border-color 0.2s}
+.fg input:focus,.fg select:focus{border-color:var(--g60)}
+.fg input.err{border-color:#e24b4a}
+/* Payment tabs */
+.ptabs{display:flex;border:1.5px solid var(--n20);border-radius:var(--rm);overflow:hidden;margin-bottom:1.3rem}
+.ptab{flex:1;padding:9px 6px;background:white;border:none;font-family:var(--fb);font-size:0.8rem;font-weight:600;color:var(--tsoft);cursor:pointer;transition:all 0.18s;display:flex;flex-direction:column;align-items:center;gap:3px;border-right:1px solid var(--n20)}
+.ptab:last-child{border-right:none}
+.ptab .ti{font-size:1.15rem}
+.ptab.on{background:var(--g60);color:white}
+.ptab:hover:not(.on){background:var(--g5);color:var(--g80)}
+.ppanel{display:none}
+.ppanel.on{display:block}
+/* UPI */
+.upi-box{background:var(--g5);border:1.5px solid var(--g20);border-radius:var(--rm);padding:1.1rem;text-align:center;margin-bottom:1rem}
+.upi-id{font-size:1.05rem;font-weight:700;color:var(--gd);padding:7px 14px;background:white;border-radius:var(--rs);border:1px solid var(--g20);display:inline-block;margin:6px 0;letter-spacing:0.02em}
+.upi-apps{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:0.8rem}
+.uapp{display:flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--n20);border-radius:var(--rs);padding:7px 12px;font-size:0.8rem;font-weight:600;color:var(--text);cursor:pointer;transition:all 0.18s;text-decoration:none}
+.uapp:hover{border-color:var(--g60);background:var(--g5)}
+.uapp .ai{font-size:1rem}
+.usteps{list-style:none;margin:0.8rem 0}
+.usteps li{display:flex;align-items:flex-start;gap:7px;font-size:0.8rem;color:var(--tmid);padding:4px 0;border-bottom:1px solid var(--n10)}
+.usteps li:last-child{border:none}
+.usteps li .sn{width:18px;height:18px;border-radius:50%;background:var(--g60);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ref-row{margin-top:0.9rem}
+.ref-row label{display:block;font-size:0.78rem;font-weight:600;color:var(--n60);margin-bottom:4px}
+.ref-row input{width:100%;border:1.5px solid var(--n20);border-radius:var(--rs);padding:9px 12px;font-family:var(--fb);font-size:0.87rem;outline:none;transition:border-color 0.2s}
+.ref-row input:focus{border-color:var(--g60)}
+/* Card */
+.card-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* Netbanking */
+.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:0.9rem}
+.bank-btn{border:1.5px solid var(--n20);border-radius:var(--rs);padding:9px 8px;background:white;font-family:var(--fb);font-size:0.8rem;font-weight:600;color:var(--tmid);cursor:pointer;text-align:center;transition:all 0.18s}
+.bank-btn:hover,.bank-btn.sel{border-color:var(--g60);background:var(--g5);color:var(--g80)}
+.nb-info{display:none;background:var(--g5);border:1px solid var(--g20);border-radius:var(--rm);padding:0.9rem;margin-bottom:0.9rem;font-size:0.82rem;color:var(--tmid)}
+/* Pay button */
+.pay-btn{width:100%;background:linear-gradient(135deg,var(--g60),var(--b60));color:white;border:none;border-radius:30px;padding:14px;font-family:var(--fb);font-size:0.95rem;font-weight:600;cursor:pointer;transition:opacity 0.2s;margin-top:0.9rem;display:flex;align-items:center;justify-content:center;gap:8px}
+.pay-btn:hover{opacity:0.9}
+.m-note{font-size:0.72rem;color:var(--tsoft);text-align:center;margin-top:8px}
+/* Back btn */
+.back-btn{background:var(--n10);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.95rem;color:var(--tmid)}
+/* Success */
+.success-screen{padding:2.2rem 1.8rem;text-align:center}
+.success-icon{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,var(--g60),var(--b60));display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;font-size:1.9rem}
+.success-screen h3{font-family:var(--fd);font-size:1.7rem;font-weight:700;color:var(--gd);margin-bottom:0.5rem}
+.success-screen p{font-size:0.88rem;color:var(--tsoft);margin-bottom:1.3rem;line-height:1.6}
+.success-ref{background:var(--g5);border:1px solid var(--g20);border-radius:var(--rm);padding:0.9rem;font-size:0.83rem;color:var(--tmid);margin-bottom:1.3rem;text-align:left;line-height:1.9}
+.success-ref strong{color:var(--gd)}
+.close-btn{background:var(--g60);color:white;border:none;border-radius:30px;padding:11px 26px;font-family:var(--fb);font-size:0.9rem;font-weight:600;cursor:pointer}
+/* Footer */
+footer{background:var(--gd);color:rgba(255,255,255,0.65);padding:36px 0 22px;text-align:center}
+.footer-logo{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:white;margin-bottom:0.5rem}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.83rem;transition:color 0.2s}
+.footer-links a:hover{color:white}
+.footer-copy{font-size:0.74rem;color:rgba(255,255,255,0.3)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><img src="logo.svg" alt="MedYatra — India Medical Tourism" height="44" style="display:block;height:44px;width:auto;"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="pricing.html" class="act">Plans</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal('premium')">Subscribe <span class="chip">$40</span></button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="eyebrow">💳 Simple, Transparent Pricing</div>
+    <h1>Choose Your Plan</h1>
+    <p style="color:var(--tsoft);font-size:1rem;max-width:460px;margin:0 auto">No hidden fees. Pay securely via UPI, card or net banking. We respond within 4 hours, 7 days a week.</p>
+  </div>
+</div>
+
+<!-- CARDS -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-grid">
+
+      <!-- FREE -->
+      <div class="pricing-card">
+        <div class="plan-tier">Free</div>
+        <div class="plan-price"><sup>$</sup>0</div>
+        <div class="plan-billing">forever · no card needed</div>
+        <div class="plan-tagline">Browse, research and prepare at your own pace.</div>
+        <ul class="features-list">
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Full treatment directory</strong><span>All diseases, hospitals & costs</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>India vs USA cost comparisons</strong><span>Real published data</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Visa & travel guides</strong></div></li>
+          <li><span class="fch fcn">–</span><div class="feat-text"><strong>Hospital shortlisting</strong><span>Not included</span></div></li>
+          <li><span class="fch fcn">–</span><div class="feat-text"><strong>Doctor consultation</strong><span>Not included</span></div></li>
+        </ul>
+        <a href="treatments.html" class="btn-plan btn-sec">Browse Treatments</a>
+      </div>
+
+      <!-- BASIC $20 -->
+      <div class="pricing-card" style="border-color:var(--b20)">
+        <div class="plan-tier">Basic</div>
+        <div class="plan-price"><sup>$</sup>20</div>
+        <div class="plan-billing">one-time · per medical trip</div>
+        <div class="plan-tagline">Essential guidance to start the right way.</div>
+        <ul class="features-list">
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Personalised hospital shortlist</strong><span>Top 3 for your condition</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Specific cost breakdown</strong><span>For your exact procedure</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Visa invitation letter</strong><span>Template + guidance</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Email support</strong><span>Reply within 24 hours</span></div></li>
+          <li><span class="fch fcn">–</span><div class="feat-text"><strong>Doctor video call</strong><span>Not included</span></div></li>
+          <li><span class="fch fcn">–</span><div class="feat-text"><strong>In-hospital concierge</strong><span>Not included</span></div></li>
+        </ul>
+        <button class="btn-plan btn-blue" onclick="openModal('basic')">Get Basic — $20 →</button>
+      </div>
+
+      <!-- PREMIUM $40 -->
+      <div class="pricing-card featured">
+        <div class="featured-badge">⭐ Best Plan — Most Popular</div>
+        <div class="plan-tier">Premium</div>
+        <div class="plan-price"><sup>$</sup>40</div>
+        <div class="plan-billing">one-time · per trip · no recurring charges</div>
+        <div class="plan-tagline">Full end-to-end care coordination. Most patients choose this.</div>
+        <ul class="features-list">
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Personalised hospital shortlist</strong><span>Top 3 for your condition</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>1-on-1 doctor pre-consultation</strong><span>30-min video call before travel</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Medical visa invitation letter</strong><span>Full preparation included</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Airport pickup & hospital escort</strong></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>24/7 WhatsApp concierge</strong><span>Throughout your India stay</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Interpreter / translation</strong><span>Arabic, Bangla, French, Swahili</span></div></li>
+          <li><span class="fch fcg">✓</span><div class="feat-text"><strong>Accommodation assistance</strong></div></li>
+          <li><span class="fch fcb">✓</span><div class="feat-text"><strong>3-month post-treatment follow-up</strong></div></li>
+        </ul>
+        <button class="btn-plan btn-main" onclick="openModal('premium')">Get Premium — $40 →</button>
+        <p style="font-size:0.72rem;color:var(--tsoft);text-align:center;margin-top:9px">🔒 UPI · Card · Net Banking · Secure payment</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comp-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem">
+      <div class="eyebrow" style="background:var(--b5);color:var(--b60);border-color:var(--b10)">Full Comparison</div>
+      <h2>What's Included in Each Plan</h2>
+    </div>
+    <div class="comp-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:36%;text-align:left">Feature</th>
+            <th>Free</th>
+            <th>Basic $20</th>
+            <th class="best">Premium $40 ⭐</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Treatment directory & cost data</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Personalised hospital shortlist</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Specific cost estimate for your case</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Visa invitation letter</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Email support (24hr)</td><td><span class="cross">–</span></td><td><span class="tick">✓</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Doctor video call (pre-travel)</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Airport pickup & hospital escort</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>24/7 WhatsApp concierge</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Interpreter / translation</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>Accommodation assistance</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+          <tr><td>3-month post-treatment follow-up</td><td><span class="cross">–</span></td><td><span class="cross">–</span></td><td class="bc"><span class="tick">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow">❓ FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We accept UPI (PhonePe, Google Pay, Paytm, BHIM and any UPI app), all debit and credit cards (Visa, Mastercard, RuPay), and net banking from SBI, HDFC, ICICI, Axis, Kotak, PNB, BOB and all other major Indian banks.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the difference between Basic ($20) and Premium ($40)? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Basic gives you a hospital shortlist, cost estimate, visa letter and email support. Premium adds a pre-travel surgeon video call, airport pickup, 24/7 WhatsApp concierge, interpreter services, accommodation help and 3-month follow-up. Most patients who are actually travelling choose Premium — it covers everything end-to-end.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How quickly will you respond after payment? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Within 4 hours on any day of the week. After payment you'll receive a WhatsApp message from +91 9717019785. Share your medical reports with us there and we'll begin your hospital matching immediately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there a refund if my trip is cancelled? <span class="faq-icon">+</span></div>
+        <div class="faq-a">If your trip is cancelled before we start work — full refund. If we have already begun shortlisting — 75% refund or full transfer to a future trip. Contact us at +91 9717019785 and we will always find a fair solution.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">MedYatra ✦</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="treatments.html">Treatments</a>
+    <a href="pricing.html">Plans</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 MedYatra · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f373a3e33363136313b363e1f38323e3633713c3032">[email&#160;protected]</a> · +91 9717019785</div>
+</footer>
+
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <!-- STEP 1: DETAILS -->
+    <div class="mstep" id="step1">
+      <div class="m-title" id="m-title">Get Started</div>
+      <p class="m-sub">Enter your details to continue to payment.</p>
+      <div class="plan-pill">
+        <div><div class="pp-name" id="pp-name">Premium Plan</div><div style="font-size:0.73rem;color:var(--tsoft)">One-time · per medical trip</div></div>
+        <div class="pp-price" id="pp-price">$40</div>
+      </div>
+      <div class="fg"><label>Full Name *</label><input id="f-name" type="text" placeholder="Your full name"/></div>
+      <div class="fg"><label>Email *</label><input id="f-email" type="email" placeholder="your@email.com"/></div>
+      <div class="fg"><label>WhatsApp Number *</label><input id="f-phone" type="tel" placeholder="+1 555 000 0000"/></div>
+      <div class="fg"><label>Country</label>
+        <select id="f-country">
+          <option value="">Select country...</option>
+          <option>Bangladesh</option><option>Afghanistan</option><option>Iraq</option>
+          <option>Nigeria</option><option>Kenya</option><option>USA</option>
+          <option>United Kingdom</option><option>Canada</option><option>Oman</option>
+          <option>South Africa</option><option>India</option><option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Treatment Needed</label>
+        <select id="f-treatment">
+          <option value="">Select treatment...</option>
+          <option>Cardiac (Bypass, Valve, Angioplasty)</option>
+          <option>Oncology / Cancer</option>
+          <option>Orthopaedics (Knee, Hip, Spine)</option>
+          <option>Neurology / Brain Surgery</option>
+          <option>Organ Transplant</option>
+          <option>Fertility / IVF</option>
+          <option>Eye Surgery</option>
+          <option>Dental / Cosmetic</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="pay-btn" onclick="goStep2()">Continue to Payment →</button>
+      <p class="m-note">🔒 Your information is never shared with third parties</p>
+    </div>
+
+    <!-- STEP 2: PAYMENT -->
+    <div class="mstep hidden" id="step2">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.1rem">
+        <button class="back-btn" onclick="goStep1()">←</button>
+        <div class="m-title" style="font-size:1.3rem">Select Payment Method</div>
+      </div>
+      <div class="plan-pill" style="margin-bottom:1.1rem">
+        <div class="pp-name" id="pp-name2">Premium Plan</div>
+        <div class="pp-price" id="pp-price2">$40</div>
+      </div>
+
+      <div class="ptabs">
+        <button class="ptab on" onclick="switchTab('upi',this)"><span class="ti">📱</span>UPI</button>
+        <button class="ptab" onclick="switchTab('card',this)"><span class="ti">💳</span>Card</button>
+        <button class="ptab" onclick="switchTab('netbank',this)"><span class="ti">🏦</span>Net Banking</button>
+      </div>
+
+      <!-- UPI -->
+      <div class="ppanel on" id="panel-upi">
+        <div class="upi-box">
+          <div style="font-size:0.78rem;color:var(--tsoft)">Pay to MedYatra UPI ID</div>
+          <div class="upi-id">9717019785@fam</div>
+          <div style="font-size:0.75rem;color:var(--tsoft);margin-top:4px">Amount: <strong id="u-amt" style="color:var(--gd)">$40</strong> · Beneficiary: MedYatra</div>
+          <div class="upi-apps">
+            <a class="uapp" id="link-phonepe" href="upi://pay?pa=9717019785@fam&pn=MedYatra&am=40&cu=INR&tn=MedYatra+Premium"><span class="ai">🟣</span>PhonePe</a>
+            <a class="uapp" id="link-gpay" href="upi://pay?pa=9717019785@fam&pn=MedYatra&am=40&cu=INR&tn=MedYatra+Plan"><span class="ai">🔵</span>GPay</a>
+            <a class="uapp" id="link-paytm" href="upi://pay?pa=9717019785@fam&pn=MedYatra&am=40&cu=INR&tn=MedYatra+Plan"><span class="ai">🔷</span>Paytm</a>
+            <a class="uapp" id="link-bhim" href="upi://pay?pa=9717019785@fam&pn=MedYatra&am=40&cu=INR&tn=MedYatra+Plan"><span class="ai">🇮🇳</span>BHIM</a>
+          </div>
+        </div>
+        <ol class="usteps">
+          <li><span class="sn">1</span>Open PhonePe, GPay, Paytm or any UPI app</li>
+          <li><span class="sn">2</span>Send to UPI ID: <strong>9717019785@fam</strong></li>
+          <li><span class="sn">3</span>Amount: <strong id="u-amt2">$40</strong> · Add your name in remarks</li>
+          <li><span class="sn">4</span>After payment, enter the transaction ID below</li>
+        </ol>
+        <div class="ref-row">
+          <label>UPI Transaction ID (required after payment) *</label>
+          <input id="upi-txn" type="text" placeholder="e.g. 407618382930"/>
+        </div>
+        <button class="pay-btn" onclick="confirmPay('upi')">✅ I've Paid — Confirm Booking</button>
+        <p class="m-note">Your booking is activated once we verify the transaction (within 2 hours)</p>
+      </div>
+
+      <!-- CARD -->
+      <div class="ppanel" id="panel-card">
+        <div style="background:var(--b5);border:1px solid var(--b10);border-radius:var(--rm);padding:0.85rem;margin-bottom:1rem;font-size:0.8rem;color:var(--b80)">
+          💳 Card payments are encrypted and secure. Your card details are never stored.
+        </div>
+        <div class="fg"><label>Name on Card *</label><input id="c-name" type="text" placeholder="As printed on card"/></div>
+        <div class="fg"><label>Card Number *</label><input id="c-num" type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)"/></div>
+        <div class="card-row2">
+          <div class="fg"><label>Expiry *</label><input id="c-exp" type="text" placeholder="MM / YY" maxlength="7" oninput="fmtExp(this)"/></div>
+          <div class="fg"><label>CVV *</label><input id="c-cvv" type="password" placeholder="•••" maxlength="4"/></div>
+        </div>
+        <div style="background:var(--g5);border:1px solid var(--g20);border-radius:var(--rm);padding:0.85rem;font-size:0.79rem;color:var(--tmid)">
+          ℹ️ After payment, WhatsApp us at <strong>+91 9717019785</strong> with your name to confirm activation.
+        </div>
+        <button class="pay-btn" onclick="confirmPay('card')">🔒 Pay <span id="c-amt">$40</span> Securely</button>
+        <p class="m-note">🛡️ Visa · Mastercard · RuPay · 256-bit SSL encrypted</p>
+      </div>
+
+      <!-- NET BANKING -->
+      <div class="ppanel" id="panel-netbank">
+        <p style="font-size:0.81rem;color:var(--tsoft);margin-bottom:0.9rem">Choose your bank, complete the transfer, then enter the reference number below.</p>
+        <div class="bank-grid">
+          <button class="bank-btn" onclick="selBank(this,'SBI')">🏦 SBI</button>
+          <button class="bank-btn" onclick="selBank(this,'HDFC')">🏦 HDFC Bank</button>
+          <button class="bank-btn" onclick="selBank(this,'ICICI')">🏦 ICICI Bank</button>
+          <button class="bank-btn" onclick="selBank(this,'Axis')">🏦 Axis Bank</button>
+          <button class="bank-btn" onclick="selBank(this,'Kotak')">🏦 Kotak Bank</button>
+          <button class="bank-btn" onclick="selBank(this,'PNB')">🏦 PNB</button>
+          <button class="bank-btn" onclick="selBank(this,'BOB')">🏦 Bank of Baroda</button>
+          <button class="bank-btn" onclick="selBank(this,'Other')">🏦 Other Bank</button>
+        </div>
+        <div class="nb-info" id="nb-info">
+          <strong style="color:var(--gd)">Transfer to:</strong><br/>
+          UPI ID: <strong>9717019785@fam</strong><br/>
+          Amount: <strong id="nb-amt">$40</strong><br/>
+          Beneficiary Name: <strong>MedYatra</strong>
+        </div>
+        <div class="ref-row" id="nb-ref" style="display:none">
+          <label>Bank Transaction / Reference Number *</label>
+          <input id="nb-txn" type="text" placeholder="Transaction reference from your bank"/>
+        </div>
+        <button class="pay-btn" id="nb-btn" style="display:none" onclick="confirmPay('netbank')">✅ Confirm Payment</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: SUCCESS -->
+    <div class="mstep hidden" id="step3">
+      <div class="success-screen">
+        <div class="success-icon">✅</div>
+        <h3>Booking Confirmed!</h3>
+        <p>Thank you for choosing MedYatra. Our care coordinator will contact you on WhatsApp within <strong>4 hours</strong>.</p>
+        <div class="success-ref">
+          <strong>Plan:</strong> <span id="s-plan">Premium</span><br/>
+          <strong>WhatsApp us at:</strong> +91 9717019785<br/>
+          <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147c7175787d7a7d7a707d75547379757d783a777b79">[email&#160;protected]</a><br/>
+          <strong>Next step:</strong> Send your medical reports on WhatsApp to begin matching
+        </div>
+        <p style="font-size:0.8rem;color:var(--tsoft);margin-bottom:1.1rem">Save our number: <strong style="color:var(--gd)">+91 9717019785</strong></p>
+        <button class="close-btn" onclick="closeModal()">Done — Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var CP = 'premium';
+var SELBANK = '';
+var PLANS = {
+  free:    {name:'Free Plan',    price:'$0',  amt:'0'},
+  basic:   {name:'Basic Plan',   price:'$20', amt:'20'},
+  premium: {name:'Premium Plan', price:'$40', amt:'40'}
+};
+
+function openModal(plan) {
+  CP = plan || 'premium';
+  var p = PLANS[CP];
+  document.getElementById('m-title').textContent = 'Get ' + p.name;
+  ['pp-name','pp-name2'].forEach(function(id){ document.getElementById(id).textContent = p.name; });
+  ['pp-price','pp-price2'].forEach(function(id){ document.getElementById(id).textContent = p.price; });
+  document.getElementById('u-amt').textContent = p.price;
+  document.getElementById('u-amt2').textContent = p.price;
+  document.getElementById('c-amt').textContent = p.price;
+  document.getElementById('nb-amt').textContent = p.price;
+  // Update UPI deep links
+  ['link-phonepe','link-gpay','link-paytm','link-bhim'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.href = el.href.replace(/am=\d+/,'am='+p.amt);
+  });
+  showStep('step1');
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(reset, 380);
+}
+
+function showStep(id) {
+  ['step1','step2','step3'].forEach(function(s){
+    document.getElementById(s).classList.toggle('hidden', s!==id);
+  });
+}
+
+function goStep2() {
+  var ok = true;
+  ['f-name','f-email','f-phone'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el.value.trim()){ el.classList.add('err'); ok=false; }
+    else el.classList.remove('err');
+  });
+  if(ok) showStep('step2');
+}
+
+function goStep1() { showStep('step1'); }
+
+function switchTab(tab, btn) {
+  document.querySelectorAll('.ptab').forEach(function(t){ t.classList.remove('on'); });
+  document.querySelectorAll('.ppanel').forEach(function(p){ p.classList.remove('on'); });
+  btn.classList.add('on');
+  document.getElementById('panel-'+tab).classList.add('on');
+}
+
+function selBank(btn, bank) {
+  SELBANK = bank;
+  document.querySelectorAll('.bank-btn').forEach(function(b){ b.classList.remove('sel'); });
+  btn.classList.add('sel');
+  document.getElementById('nb-info').style.display = 'block';
+  document.getElementById('nb-ref').style.display = 'block';
+  document.getElementById('nb-btn').style.display = 'flex';
+}
+
+function confirmPay(method) {
+  if(method === 'upi') {
+    var txn = document.getElementById('upi-txn').value.trim();
+    if(!txn){ document.getElementById('upi-txn').style.borderColor='#e24b4a'; return; }
+    document.getElementById('s-plan').textContent = PLANS[CP].name + ' · UPI TXN: ' + txn;
+  } else if(method === 'card') {
+    var n=document.getElementById('c-name').value.trim();
+    var num=document.getElementById('c-num').value.replace(/\s/g,'');
+    var exp=document.getElementById('c-exp').value.trim();
+    var cvv=document.getElementById('c-cvv').value.trim();
+    if(!n||num.length<13||!exp||!cvv){ return; }
+    document.getElementById('s-plan').textContent = PLANS[CP].name + ' · Card ending ' + num.slice(-4);
+  } else if(method === 'netbank') {
+    var t=document.getElementById('nb-txn').value.trim();
+    if(!SELBANK||!t){ document.getElementById('nb-txn').style.borderColor='#e24b4a'; return; }
+    document.getElementById('s-plan').textContent = PLANS[CP].name + ' · ' + SELBANK + ' Ref: ' + t;
+  }
+  showStep('step3');
+}
+
+function fmtCard(el){ var v=el.value.replace(/\D/g,'').substring(0,16); el.value=v.match(/.{1,4}/g)?v.match(/.{1,4}/g).join(' '):v; }
+function fmtExp(el){ var v=el.value.replace(/\D/g,'').substring(0,4); if(v.length>=2) v=v.substring(0,2)+' / '+v.substring(2); el.value=v; }
+
+function reset() {
+  ['f-name','f-email','f-phone','upi-txn','nb-txn','c-name','c-num','c-exp','c-cvv'].forEach(function(id){
+    var el=document.getElementById(id); if(el){el.value='';el.style.borderColor='var(--n20)';el.classList.remove('err');}
+  });
+  SELBANK='';
+  document.querySelectorAll('.bank-btn').forEach(function(b){b.classList.remove('sel');});
+  document.getElementById('nb-info').style.display='none';
+  document.getElementById('nb-ref').style.display='none';
+  document.getElementById('nb-btn').style.display='none';
+  document.querySelectorAll('.ptab').forEach(function(t,i){t.classList.toggle('on',i=

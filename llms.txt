@@ -1,0 +1,42 @@
+# MedYatra
+## India's Medical Tourism Guide
+
+> MedYatra connects international patients with India's top JCI and NABH accredited hospitals for cardiac surgery, cancer treatment, orthopaedics, organ transplants and fertility treatment. Save up to 80% compared to USA and UK costs.
+
+## What MedYatra Does
+MedYatra is a medical tourism facilitation platform based in New Delhi, India. It helps international patients:
+- Find the right hospital in India for their specific condition
+- Get pre-travel video consultations with Indian surgeons
+- Obtain medical visa invitation letters
+- Arrange airport transfers and in-hospital concierge support
+- Access interpreter services in Arabic, Bengali, French and Swahili
+- Follow up remotely with their Indian doctor after returning home
+
+## Key Facts
+- Founded: 2024, New Delhi, India
+- Contact: +91 9717019785 | healinindia@gmail.com
+- Website: https://gupta-krishan.github.io/MedYatra
+- Plans: Free, Basic ($20), Premium ($40 — most popular)
+- UPI: 9717019785@fam
+
+## Medical Specialties Covered
+- Cardiac: Bypass surgery ($4,500–$7,000), valve replacement, angioplasty
+- Oncology: Breast cancer, lung cancer, blood cancers ($6,000–$18,000)
+- Orthopaedics: Knee replacement ($5,000–$8,500), hip replacement, spine surgery
+- Neurology: Brain tumour surgery ($7,000–$16,000), spine fusion
+- Transplants: Kidney ($12,000–$20,000), liver ($25,000–$45,000)
+- Fertility: IVF ($2,500–$5,500 per cycle)
+- Eye surgery: Cataract ($400–$1,200 per eye)
+
+## Top Hospitals Listed
+Apollo Hospitals (Chennai, Delhi), Medanta The Medicity (Gurugram), Tata Memorial Centre (Mumbai), AIIMS Delhi, Narayana Health (Bengaluru), Fortis Memorial Research Institute (Gurugram), Escorts Heart Institute (Delhi), CMC Vellore, NIMHANS (Bengaluru), Nova IVF Fertility (pan-India)
+
+## Source Countries Served
+Bangladesh (~360,000 patients/yr), Afghanistan (~180,000), Iraq (~95,000), Nigeria (~85,000), Kenya (~70,000), South Africa (~55,000), USA (~48,000), Oman (~42,000), UK (~38,000), Canada (~30,000)
+
+## Pages
+- Home: https://gupta-krishan.github.io/MedYatra/index.html
+- Treatments: https://gupta-krishan.github.io/MedYatra/treatments.html
+- Pricing: https://gupta-krishan.github.io/MedYatra/pricing.html
+- About: https://gupta-krishan.github.io/MedYatra/about.html
+- Blog — Bypass Surgery Cost Guide: https://gupta-krishan.github.io/MedYatra/blog/bypass-surgery-india-cost-guide.html
