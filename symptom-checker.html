@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Symptom Checker — Find Your Treatment in India | MedYatra</title>
+<meta name="description" content="Free AI symptom checker for medical tourism in India. Describe your symptoms and get instant suggestions for specialists, hospitals and estimated treatment costs in India."/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8faf9;
+  --g5:#f0f9f4;--g10:#e0f3ea;--g20:#b8e4cc;--g40:#6dc799;--g60:#2fa866;--g80:#1a7244;--gd:#0e4a2c;
+  --b5:#f0f6fd;--b10:#ddeefa;--b60:#2e7dd4;--b80:#1a5299;
+  --n5:#f5f7f6;--n10:#eaeeec;--n20:#d0d8d4;--n60:#5e7269;
+  --text:#0f1f18;--tmid:#3d5548;--tsoft:#6b8278;
+  --border:rgba(15,80,50,0.1);
+  --rs:8px;--rm:14px;--rl:22px;
+  --ss:0 2px 12px rgba(15,80,50,0.07);--sm:0 6px 28px rgba(15,80,50,0.1);--sl:0 16px 60px rgba(15,80,50,0.13);
+  --fd:'Cormorant Garamond',Georgia,serif;--fb:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:66px;display:flex;align-items:center;padding:0 clamp(1rem,4vw,3rem);gap:1.5rem}
+.nav-logo{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--gd);text-decoration:none;flex-shrink:0}
+.nav-logo .a{color:var(--g60)}
+.nav-links{display:flex;align-items:center;list-style:none;flex:1;gap:0}
+.nav-links a{display:block;padding:6px 15px;text-decoration:none;color:var(--tmid);font-size:0.88rem;font-weight:500;border-radius:30px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.act{background:var(--g5);color:var(--g80)}
+.nav-cta{margin-left:auto;background:var(--g60);color:white;border:none;border-radius:30px;padding:9px 20px;font-family:var(--fb);font-size:0.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all 0.2s;flex-shrink:0}
+.nav-cta:hover{background:var(--g80)}
+.nav-cta .chip{background:rgba(255,255,255,0.22);border-radius:20px;padding:2px 9px;font-size:0.79rem;font-weight:700}
+@media(max-width:700px){.nav-links{display:none}}
+
+/* PAGE LAYOUT */
+.container{max-width:900px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.page-hero{background:linear-gradient(150deg,var(--gd) 0%,#1a5299 100%);padding:56px 0 48px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.page-hero .eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:30px;padding:5px 14px;font-size:0.75rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:1rem}
+.page-hero h1{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;margin-bottom:0.6rem;line-height:1.15}
+.page-hero p{color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:500px;margin:0 auto}
+
+/* CHAT INTERFACE */
+.chat-wrap{max-width:860px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 80px}
+.disclaimer{background:var(--b5);border:1px solid var(--b10);border-radius:var(--rm);padding:0.9rem 1.2rem;margin:1.6rem 0;font-size:0.8rem;color:var(--b80);display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+.disclaimer strong{color:var(--b80)}
+
+/* QUICK SYMPTOM CHIPS */
+.quick-label{font-size:0.78rem;font-weight:600;color:var(--tsoft);margin:1.4rem 0 0.6rem;text-transform:uppercase;letter-spacing:0.05em}
+.quick-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.6rem}
+.chip-btn{background:white;border:1.5px solid var(--border);border-radius:30px;padding:7px 16px;font-family:var(--fb);font-size:0.82rem;font-weight:500;color:var(--tmid);cursor:pointer;transition:all 0.18s}
+.chip-btn:hover{border-color:var(--g60);background:var(--g5);color:var(--g80)}
+
+/* CHAT MESSAGES */
+.chat-window{background:white;border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sm);margin-bottom:16px;min-height:280px}
+.chat-messages{padding:1.4rem;display:flex;flex-direction:column;gap:14px;max-height:520px;overflow-y:auto}
+.msg{display:flex;gap:10px;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.msg.user{flex-direction:row-reverse}
+.msg-avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;margin-top:2px}
+.msg-avatar.ai{background:linear-gradient(135deg,var(--g60),var(--b60));color:white;font-weight:700;font-size:0.7rem}
+.msg-avatar.user{background:var(--n10);color:var(--tmid)}
+.msg-bubble{max-width:78%;padding:10px 14px;border-radius:16px;font-size:0.9rem;line-height:1.65}
+.msg-bubble.ai{background:var(--n5);color:var(--tmid);border-radius:4px 16px 16px 16px}
+.msg-bubble.user{background:var(--g60);color:white;border-radius:16px 4px 16px 16px}
+.msg-bubble h4{font-family:var(--fd);font-size:1.05rem;color:var(--gd);margin-bottom:6px}
+.msg-bubble.ai h4{color:var(--gd)}
+.msg-bubble ul{margin:8px 0 4px 16px}
+.msg-bubble li{margin-bottom:4px;font-size:0.87rem}
+.msg-bubble .cost-tag{display:inline-block;background:var(--g10);color:var(--g80);border-radius:6px;padding:2px 8px;font-size:0.78rem;font-weight:700;margin-top:4px}
+.msg-bubble .hosp-tag{display:inline-block;background:var(--b10);color:var(--b80);border-radius:6px;padding:2px 8px;font-size:0.78rem;font-weight:600;margin:2px 3px 2px 0}
+.typing{display:flex;align-items:center;gap:4px;padding:12px 14px}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--n40);animation:bounce 1.2s infinite}
+.typing span:nth-child(2){animation-delay:0.2s}
+.typing span:nth-child(3){animation-delay:0.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+
+/* INPUT BAR */
+.chat-input-wrap{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:12px 14px;box-shadow:var(--sm);display:flex;gap:10px;align-items:flex-end}
+.chat-input{flex:1;border:none;outline:none;font-family:var(--fb);font-size:0.92rem;color:var(--text);background:transparent;resize:none;line-height:1.5;max-height:120px;min-height:24px}
+.chat-input::placeholder{color:var(--tsoft)}
+.send-btn{background:var(--g60);color:white;border:none;border-radius:20px;padding:9px 20px;font-family:var(--fb);font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap}
+.send-btn:hover{background:var(--g80)}
+.send-btn:disabled{background:var(--n20);cursor:not-allowed}
+
+/* RESULTS PANEL */
+.results-panel{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:1.6rem;box-shadow:var(--sm);margin-top:16px;display:none}
+.results-panel.show{display:block}
+.result-section{margin-bottom:1.4rem}
+.result-section:last-child{margin-bottom:0}
+.result-label{font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--tsoft);margin-bottom:0.6rem}
+.hospital-card{border:1px solid var(--border);border-radius:var(--rm);padding:0.9rem 1rem;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hc-name{font-weight:600;font-size:0.88rem;color:var(--text)}
+.hc-city{font-size:0.75rem;color:var(--tsoft);margin-top:2px}
+.hc-price{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--g60);white-space:nowrap}
+.hc-accr{font-size:0.68rem;background:var(--b10);color:var(--b80);border-radius:5px;padding:2px 7px;font-weight:700;display:block;margin-top:3px;text-align:right}
+.cta-result{background:linear-gradient(135deg,var(--gd),#1a5299);border-radius:var(--rl);padding:1.2rem 1.4rem;text-align:center;margin-top:1rem}
+.cta-result p{color:rgba(255,255,255,0.8);font-size:0.86rem;margin-bottom:0.9rem}
+.cta-result a{background:white;color:var(--gd);border-radius:30px;padding:10px 22px;font-family:var(--fb);font-size:0.88rem;font-weight:700;text-decoration:none;display:inline-block;transition:opacity 0.2s}
+.cta-result a:hover{opacity:0.9}
+
+/* FOOTER */
+footer{background:var(--gd);color:rgba(255,255,255,0.65);padding:36px 0 22px;text-align:center}
+.footer-logo{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:white;margin-bottom:0.5rem}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.83rem;transition:color 0.2s}
+.footer-links a:hover{color:white}
+.footer-copy{font-size:0.74rem;color:rgba(255,255,255,0.3)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><img src="logo.svg" alt="MedYatra" height="40" style="height:40px;width:auto;display:block"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="symptom-checker.html" class="act">Symptom Checker</a></li>
+    <li><a href="pricing.html">Plans</a></li>
+  </ul>
+  <a class="nav-cta" href="pricing.html">Get Help <span class="chip">$40</span></a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="eyebrow">🤖 AI-Powered · Free · No Signup</div>
+    <h1>AI Symptom Checker</h1>
+    <p>Describe your symptoms in plain language. Our AI will suggest possible conditions, the right specialists in India, and estimated treatment costs.</p>
+  </div>
+</div>
+
+<div class="chat-wrap">
+
+  <div class="disclaimer">
+    <span style="font-size:1rem;flex-shrink:0">⚠️</span>
+    <span><strong>Medical disclaimer:</strong> This AI tool provides general information only and is not a substitute for professional medical diagnosis. Always consult a qualified doctor for medical advice. In an emergency, contact your local emergency services immediately.</span>
+  </div>
+
+  <div class="quick-label">Quick start — tap a symptom</div>
+  <div class="quick-chips">
+    <button class="chip-btn" onclick="quickAsk('I have chest pain and shortness of breath during exercise')">💛 Chest pain</button>
+    <button class="chip-btn" onclick="quickAsk('My knee is painful and I have difficulty walking or climbing stairs')">🦵 Knee pain</button>
+    <button class="chip-btn" onclick="quickAsk('I have a lump or unusual swelling that has been growing')">🔴 Lump or swelling</button>
+    <button class="chip-btn" onclick="quickAsk('I have been trying to get pregnant for over a year without success')">👶 Fertility issue</button>
+    <button class="chip-btn" onclick="quickAsk('My vision is blurry and I have eye pain or pressure')">👁️ Eye problems</button>
+    <button class="chip-btn" onclick="quickAsk('I have severe back or spine pain that radiates down my leg')">🦴 Back / spine pain</button>
+    <button class="chip-btn" onclick="quickAsk('I have been diagnosed with kidney failure and need a transplant')">💊 Kidney failure</button>
+    <button class="chip-btn" onclick="quickAsk('I have severe headaches and was told I have a brain tumour')">🧠 Brain tumour</button>
+  </div>
+
+  <!-- CHAT WINDOW -->
+  <div class="chat-window">
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg">
+        <div class="msg-avatar ai">MY</div>
+        <div class="msg-bubble ai">
+          <h4>Hello! I'm MedYatra's AI Health Assistant 👋</h4>
+          Tell me your symptoms in plain language — for example: <em>"I have chest pain when I walk fast"</em> or <em>"my knee hurts and I can't climb stairs"</em>.<br/><br/>
+          I'll suggest what condition it might be, which specialists in India can treat it, which hospitals are best, and what it will cost compared to your home country.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INPUT BAR -->
+  <div class="chat-input-wrap">
+    <textarea class="chat-input" id="chatInput" placeholder="Describe your symptoms here... e.g. I have chest pain when I exercise and feel tired easily" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+      Send ↗
+    </button>
+  </div>
+
+  <!-- RESULTS PANEL -->
+  <div class="results-panel" id="resultsPanel">
+    <div id="resultsContent"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">MedYatra ✦</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="treatments.html">Treatments</a>
+    <a href="pricing.html">Plans</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 MedYatra · healinindia@gmail.com · +91 9717019785</div>
+</footer>
+
+<script>
+// ================================================================
+// MEDYATRA AI SYMPTOM CHECKER
+// Uses Claude API (claude-sonnet-4-20250514) via Anthropic endpoint
+// ================================================================
+
+var ANTHROPIC_KEY = 'YOUR_ANTHROPIC_API_KEY_HERE';
+// Get your free API key at: https://console.anthropic.com
+// Replace YOUR_ANTHROPIC_API_KEY_HERE with your actual key
+// Free tier: 5 million tokens/month (thousands of symptom checks)
+
+var conversationHistory = [];
+
+var SYSTEM_PROMPT = `You are MedYatra's AI Health Assistant — a helpful, warm and knowledgeable medical information guide specialising in medical tourism to India.
+
+When a user describes symptoms, you must always respond in this EXACT structured format:
+
+**🔍 Possible Conditions:**
+List 2-3 possible conditions based on the symptoms. Be honest about uncertainty.
+
+**👨‍⚕️ Recommended Specialist in India:**
+Name the exact type of doctor/specialist they need.
+
+**🏥 Top Hospitals in India:**
+List 3 specific hospitals with city and estimated cost range:
+• Hospital Name, City — $X,XXX–$X,XXX
+• Hospital Name, City — $X,XXX–$X,XXX  
+• Hospital Name, City — $X,XXX–$X,XXX
+
+**💰 India vs Home Country Cost:**
+Give a brief cost comparison. Example: "This treatment costs $5,000–$8,000 in India vs $40,000–$70,000 in the USA."
+
+**⏱️ Typical Timeline:**
+How long will the patient need to stay in India.
+
+**✅ Recommended Next Step:**
+A single clear action they should take now.
+
+**⚠️ Important Note:**
+Always end with: "This is general information only. Please consult a qualified doctor for a proper diagnosis. MedYatra can connect you with the right specialist in India — use our free consultation form or the $40 Premium Plan at medyatra.in"
+
+Rules:
+- Be warm, clear and reassuring — not clinical or scary
+- Always use real Indian hospital names (Apollo, Medanta, Narayana, Tata Memorial, AIIMS, Fortis, CMC Vellore, NIMHANS etc.)
+- Always give real cost ranges in USD
+- If symptoms sound like a medical emergency, say so clearly and tell them to seek immediate care
+- Never diagnose — always say "possible" or "this could be"
+- Keep responses focused and scannable — use the format above consistently`;
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function quickAsk(text) {
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+
+function addMessage(role, content, isHTML) {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'msg ' + (role === 'user' ? 'user' : '');
+  var avatarText = role === 'user' ? '👤' : 'MY';
+  if (isHTML) {
+    div.innerHTML =
+      '<div class="msg-avatar ' + (role === 'user' ? 'user' : 'ai') + '">' + avatarText + '</div>' +
+      '<div class="msg-bubble ' + (role === 'user' ? 'user' : 'ai') + '">' + content + '</div>';
+  } else {
+    div.innerHTML =
+      '<div class="msg-avatar ' + (role === 'user' ? 'user' : 'ai') + '">' + avatarText + '</div>' +
+      '<div class="msg-bubble ' + (role === 'user' ? 'user' : 'ai') + '">' + escapeHtml(content) + '</div>';
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'msg';
+  div.id = 'typingIndicator';
+  div.innerHTML = '<div class="msg-avatar ai">MY</div><div class="msg-bubble ai"><div class="typing"><span></span><span></span><span></span></div></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  var t = document.getElementById('typingIndicator');
+  if (t) t.remove();
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br/>');
+}
+
+function formatAIResponse(text) {
+  // Convert markdown bold **text** to <strong>
+  text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Convert bullet points
+  text = text.replace(/^[•\-]\s(.+)$/gm, '<li>$1</li>');
+  text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+  // Convert line breaks
+  text = text.replace(/\n\n/g, '</p><p>');
+  text = text.replace(/\n/g, '<br/>');
+  return '<p>' + text + '</p>';
+}
+
+async function sendMessage() {
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('sendBtn');
+  var text = input.value.trim();
+  if (!text) return;
+
+  // Add user message
+  addMessage('user', text, false);
+  conversationHistory.push({ role: 'user', content: text });
+  input.value = '';
+  input.style.height = 'auto';
+  sendBtn.disabled = true;
+  sendBtn.textContent = '...';
+  showTyping();
+
+  // Check if API key is configured
+  if (ANTHROPIC_KEY === 'YOUR_ANTHROPIC_API_KEY_HERE') {
+    removeTyping();
+    // Fallback: smart offline responses
+    var fallback = getOfflineResponse(text);
+    addMessage('assistant', fallback, true);
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'Send ↗';
+    return;
+  }
+
+  try {
+    var response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': ANTHROPIC_KEY,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1024,
+        system: SYSTEM_PROMPT,
+        messages: conversationHistory
+      })
+    });
+
+    var data = await response.json();
+    removeTyping();
+
+    if (data.content && data.content[0]) {
+      var aiText = data.content[0].text;
+      conversationHistory.push({ role: 'assistant', content: aiText });
+      addMessage('assistant', formatAIResponse(aiText), true);
+      showResultsCTA();
+    } else {
+      addMessage('assistant', 'I\'m having trouble connecting right now. Please try again or contact us directly at +91 9717019785.', false);
+    }
+  } catch(err) {
+    removeTyping();
+    var fallback = getOfflineResponse(text);
+    addMessage('assistant', fallback, true);
+  }
+
+  sendBtn.disabled = false;
+  sendBtn.textContent = 'Send ↗';
+}
+
+function showResultsCTA() {
+  var panel = document.getElementById('resultsPanel');
+  var content = document.getElementById('resultsContent');
+  content.innerHTML = '<div class="cta-result"><p>Want personalised hospital recommendations and a surgeon video call based on these symptoms?</p><a href="pricing.html">Get MedYatra Premium — $40 →</a></div>';
+  panel.classList.add('show');
+}
+
+// Smart offline fallback responses when no API key is set
+function getOfflineResponse(text) {
+  var t = text.toLowerCase();
+  var response = '';
+
+  if (t.includes('chest') || t.includes('heart') || t.includes('cardiac') || t.includes('bypass')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Coronary artery disease, angina, or heart valve issue<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Interventional Cardiologist or Cardiac Surgeon<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>Escorts Heart Institute, New Delhi — $4,500–$7,000 (bypass)</li><li>Apollo Hospitals, Chennai — $5,000–$7,000</li><li>Narayana Health, Bengaluru — $4,500–$6,000</li></ul><strong>💰 Cost Comparison:</strong><br/>Bypass surgery costs $4,500–$7,000 in India vs $80,000–$120,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> 3–4 weeks in India<br/><br/><strong>✅ Next Step:</strong> Share your ECG and angiogram report with MedYatra for a hospital shortlist.<br/><br/><em>⚠️ This is general information only. Please consult a doctor for proper diagnosis.</em>';
+  } else if (t.includes('knee') || t.includes('hip') || t.includes('joint') || t.includes('ortho')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Osteoarthritis, ligament damage, or joint degeneration<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Orthopaedic Surgeon<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>Apollo Hospitals, New Delhi — $5,000–$8,500 (knee replacement)</li><li>Medanta The Medicity, Gurugram — $5,500–$8,000</li><li>Kokilaben Hospital, Mumbai — $5,000–$7,500</li></ul><strong>💰 Cost Comparison:</strong><br/>Knee replacement costs $5,000–$8,500 in India vs $35,000–$70,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> 2–3 weeks in India<br/><br/><strong>✅ Next Step:</strong> Send your X-ray or MRI report to MedYatra for a surgeon match.<br/><br/><em>⚠️ This is general information only. Please consult a doctor for proper diagnosis.</em>';
+  } else if (t.includes('cancer') || t.includes('lump') || t.includes('tumour') || t.includes('tumor') || t.includes('oncol')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Requires oncology evaluation — could be benign or malignant<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Oncologist / Surgical Oncologist<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>Tata Memorial Centre, Mumbai — $6,000–$14,000</li><li>HCG Cancer Centre, Bengaluru — $7,000–$15,000</li><li>Apollo Cancer Centre, Chennai — $8,000–$16,000</li></ul><strong>💰 Cost Comparison:</strong><br/>Cancer treatment in India costs $6,000–$14,000 vs $60,000–$150,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> Depends on treatment type; typically 4–8 weeks<br/><br/><strong>✅ Next Step:</strong> Share your biopsy report and PET-CT scan with MedYatra.<br/><br/><em>⚠️ This is general information only. Please consult a doctor immediately for proper diagnosis.</em>';
+  } else if (t.includes('kidney') || t.includes('transplant') || t.includes('dialysis') || t.includes('renal')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Chronic kidney disease or end-stage renal failure<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Nephrologist + Transplant Surgeon<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>Medanta The Medicity, Gurugram — $12,000–$18,000</li><li>CMC Vellore — $10,000–$15,000</li><li>Muljibhai Patel Urological Hospital, Nadiad — $11,000–$16,000</li></ul><strong>💰 Cost Comparison:</strong><br/>Kidney transplant costs $12,000–$20,000 in India vs $150,000–$300,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> 3–5 weeks in India (post-transplant monitoring)<br/><br/><strong>✅ Next Step:</strong> Share your kidney function reports (creatinine, GFR) with MedYatra.<br/><br/><em>⚠️ This is general information only. Please consult a doctor for proper diagnosis.</em>';
+  } else if (t.includes('ivf') || t.includes('fertilit') || t.includes('pregnant') || t.includes('baby') || t.includes('conceiv')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Infertility — could be ovulatory, tubal, uterine or male factor<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Reproductive Endocrinologist / IVF Specialist<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>Nova IVF Fertility, Bengaluru / Delhi — $2,500–$4,500/cycle</li><li>Milann Fertility Centre, Bengaluru — $2,800–$5,000/cycle</li><li>Cloudnine Hospitals, Chennai — $3,000–$5,500/cycle</li></ul><strong>💰 Cost Comparison:</strong><br/>IVF costs $2,500–$5,500 per cycle in India vs $15,000–$30,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> 12–18 days per cycle in India<br/><br/><strong>✅ Next Step:</strong> Share your AMH test and semen analysis with MedYatra.<br/><br/><em>⚠️ This is general information only. Please consult a doctor for proper diagnosis.</em>';
+  } else if (t.includes('brain') || t.includes('spine') || t.includes('back') || t.includes('neuro') || t.includes('headache')) {
+    response = '<strong>🔍 Possible Conditions:</strong><br/>Could be disc herniation, spinal stenosis, or neurological condition<br/><br/><strong>👨‍⚕️ Recommended Specialist:</strong><br/>Neurosurgeon or Spine Surgeon<br/><br/><strong>🏥 Top Hospitals in India:</strong><br/><ul><li>NIMHANS, Bengaluru — $7,000–$14,000 (brain)</li><li>Fortis Memorial Research Institute, Gurugram — $5,000–$10,000</li><li>Max Healthcare, New Delhi — $4,500–$9,000</li></ul><strong>💰 Cost Comparison:</strong><br/>Spine surgery costs $4,500–$10,000 in India vs $50,000–$120,000 in USA.<br/><br/><strong>⏱️ Timeline:</strong> 2–3 weeks in India<br/><br/><strong>✅ Next Step:</strong> Share your MRI scan report with MedYatra for specialist matching.<br/><br/><em>⚠️ This is general information only. Please consult a doctor for proper diagnosis.</em>';
+  } else {
+    response = '<strong>Thank you for describing your symptoms.</strong><br/><br/>To give you accurate information about treatment options in India, I need a few more details:<br/><ul><li>How long have you had these symptoms?</li><li>Have you seen a doctor at home? What did they say?</li><li>Do you have any existing diagnoses or test reports?</li></ul>You can also contact our team directly:<br/><br/><strong>📱 WhatsApp: +91 9717019785</strong><br/><strong>📧 healinindia@gmail.com</strong><br/><br/><em>⚠️ This tool provides general information only. For urgent symptoms, please see a doctor immediately.</em>';
+  }
+  return response;
+}
+</script>
+</body>
+</html>
