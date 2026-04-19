@@ -1,0 +1,896 @@
+<!-- MedYatra v4.0 - AI First Homepage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="shortcut icon" href="favicon.svg"/>
+<title>Medical Tourism in India 2025 | Save 80% on Surgery | MedYatra</title>
+<meta name="description" content="#1 Medical Tourism Guide India. Bypass surgery from $4,500 (save $75,000 vs USA). AI symptom checker finds your hospital FREE. JCI hospitals in Delhi, Mumbai & Chennai. 1.4M+ patients. Free consultation today."/>
+<meta name="keywords" content="medical tourism in India, medical tourism India 2025, best hospital in India for international patients, bypass surgery cost in India, medical tourism websites India, cancer treatment India cost, knee replacement India price, IVF cost India foreigners, medical visa India process, cheap surgery India, India health tourism, cardiac surgery India, organ transplant India, medical treatment India vs USA"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="MedYatra"/>
+<meta name="geo.region" content="IN-DL"/>
+<meta name="geo.placename" content="New Delhi, India"/>
+<meta name="geo.position" content="28.6139;77.2090"/>
+<meta name="ICBM" content="28.6139, 77.2090"/>
+<meta name="theme-color" content="#2fa866"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="MedYatra — AI Medical Tourism Guide for India"/>
+<meta property="og:description" content="Free AI symptom checker. India's top hospitals for cardiac, cancer, ortho, transplants and IVF. Save 80% vs USA costs."/>
+<meta property="og:url" content="https://gupta-krishan.github.io/MedYatra/"/>
+<meta property="og:site_name" content="MedYatra"/>
+<meta property="og:image" content="https://gupta-krishan.github.io/MedYatra/logo.svg"/>
+<link rel="canonical" href="https://gupta-krishan.github.io/MedYatra/"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f8faf9;--white:#fff;
+  --g5:#f0f9f4;--g10:#e0f3ea;--g20:#b8e4cc;--g40:#6dc799;--g60:#2fa866;--g80:#1a7244;--gd:#0e4a2c;
+  --b5:#f0f6fd;--b10:#ddeefa;--b20:#b0d4f5;--b60:#2e7dd4;--b80:#1a5299;
+  --n5:#f5f7f6;--n10:#eaeeec;--n20:#d0d8d4;--n40:#98aaa2;--n60:#5e7269;--n80:#2c3d36;
+  --text:#0f1f18;--tmid:#3d5548;--tsoft:#6b8278;
+  --border:rgba(15,80,50,0.1);
+  --rs:8px;--rm:14px;--rl:22px;--rxl:32px;
+  --ss:0 2px 12px rgba(15,80,50,0.07);--sm:0 6px 28px rgba(15,80,50,0.1);--sl:0 16px 60px rgba(15,80,50,0.14);
+  --fd:'Cormorant Garamond',Georgia,serif;--fb:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:66px;display:flex;align-items:center;padding:0 clamp(1rem,4vw,3rem);gap:1rem}
+.nav-logo{text-decoration:none;flex-shrink:0;display:flex;align-items:center}
+.nav-logo img{height:42px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;list-style:none;flex:1;gap:0}
+.nav-links a{display:block;padding:6px 14px;text-decoration:none;color:var(--tmid);font-size:0.87rem;font-weight:500;border-radius:30px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.active{background:var(--g5);color:var(--g80)}
+.nav-ai-btn{display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--g60),var(--b60));color:white;border-radius:30px;padding:7px 16px;font-size:0.82rem;font-weight:600;text-decoration:none;flex-shrink:0;transition:opacity 0.2s;cursor:pointer;border:none;font-family:var(--fb)}
+.nav-ai-btn:hover{opacity:0.88}
+.pulse-dot{width:7px;height:7px;background:white;border-radius:50%;animation:pdot 2s infinite;flex-shrink:0}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+.nav-plan-btn{margin-left:8px;background:var(--gd);color:white;border:none;border-radius:30px;padding:7px 18px;font-family:var(--fb);font-size:0.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background 0.2s;flex-shrink:0}
+.nav-plan-btn:hover{background:var(--g80)}
+.nav-plan-btn .chip{background:rgba(255,255,255,0.2);border-radius:20px;padding:1px 8px;font-size:0.76rem;font-weight:700}
+@media(max-width:820px){.nav-links{display:none}}
+@media(max-width:520px){.nav-ai-btn .ai-label{display:none}}
+
+/* AI HERO */
+.ai-hero{background:linear-gradient(150deg,#0b3d25 0%,#0d3b7a 100%);min-height:90vh;display:flex;align-items:center;padding:3.5rem 0;position:relative;overflow:hidden}
+.ai-hero::before{content:'';position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,0.03);pointer-events:none}
+.ai-hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:360px;height:360px;border-radius:50%;background:rgba(46,168,102,0.06);pointer-events:none}
+.hero-inner{max-width:1140px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:center;position:relative;z-index:1}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:32px;padding-bottom:2rem}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.11);border:1px solid rgba(255,255,255,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.88);margin-bottom:1.2rem}
+.hero-dot{width:7px;height:7px;background:var(--g40);border-radius:50%;animation:pdot 2s infinite}
+.ai-hero h1{font-family:var(--fd);font-size:clamp(2.5rem,4.8vw,3.9rem);font-weight:700;color:white;line-height:1.1;margin-bottom:1rem}
+.ai-hero h1 em{font-style:italic;color:var(--g40)}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,0.68);max-width:480px;margin-bottom:1.8rem;line-height:1.75}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{background:var(--g60);color:white;border:none;border-radius:30px;padding:13px 28px;font-family:var(--fb);font-size:0.92rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;box-shadow:0 6px 24px rgba(46,168,102,0.35)}
+.btn-primary:hover{background:var(--g40);transform:translateY(-2px)}
+.btn-outline-w{background:rgba(255,255,255,0.1);color:white;border:1.5px solid rgba(255,255,255,0.28);border-radius:30px;padding:13px 28px;font-family:var(--fb);font-size:0.92rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s}
+.btn-outline-w:hover{background:rgba(255,255,255,0.18)}
+.trust-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.trust-avs{display:flex}
+.tav{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:700;color:var(--gd);margin-left:-7px}
+.tav:first-child{margin-left:0}
+.trust-txt{font-size:0.79rem;color:rgba(255,255,255,0.68);line-height:1.45}
+.trust-txt strong{color:white;font-weight:600}
+
+/* CHAT BOX */
+.chat-box{background:white;border-radius:var(--rl);overflow:hidden;box-shadow:0 28px 90px rgba(0,0,0,0.38)}
+.cb-header{background:linear-gradient(135deg,var(--g60),var(--b60));padding:1rem 1.2rem;display:flex;align-items:center;gap:10px}
+.cb-icon{width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cb-title{font-weight:700;font-size:0.9rem;color:white}
+.cb-sub{font-size:0.7rem;color:rgba(255,255,255,0.72)}
+.cb-status{margin-left:auto;display:flex;align-items:center;gap:5px;font-size:0.7rem;color:rgba(255,255,255,0.8)}
+.status-dot{width:7px;height:7px;background:#6dc799;border-radius:50%;animation:pdot 2s infinite}
+.cb-msgs{padding:1rem;min-height:200px;max-height:290px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:var(--n5)}
+.bubble{display:flex;gap:8px;animation:bup 0.3s ease}
+@keyframes bup{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.bubble.user{flex-direction:row-reverse}
+.bav{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.bav.ai{background:linear-gradient(135deg,var(--g60),var(--b60));color:white}
+.bav.user{background:var(--n20);color:var(--tmid)}
+.btxt{max-width:83%;padding:9px 12px;border-radius:14px;font-size:0.83rem;line-height:1.56}
+.btxt.ai{background:white;color:var(--tmid);border-radius:4px 14px 14px 14px;box-shadow:var(--ss)}
+.btxt.user{background:var(--g60);color:white;border-radius:14px 4px 14px 14px}
+.btxt ul{margin:6px 0 2px 14px}
+.btxt li{margin-bottom:3px;font-size:0.8rem}
+.typing{display:flex;gap:4px;align-items:center;padding:8px 12px;background:white;border-radius:4px 14px 14px 14px;width:fit-content;box-shadow:var(--ss)}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--n40);animation:tdot 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes tdot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.cb-chips{padding:0.6rem 0.9rem;display:flex;gap:6px;overflow-x:auto;border-top:1px solid var(--border);background:white;scrollbar-width:none}
+.cb-chips::-webkit-scrollbar{display:none}
+.qchip{background:var(--g5);border:1px solid var(--g20);color:var(--g80);border-radius:20px;padding:5px 11px;font-size:0.74rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.15s;font-family:var(--fb)}
+.qchip:hover{background:var(--g10);border-color:var(--g60)}
+.cb-input{padding:0.75rem 0.9rem;display:flex;gap:8px;align-items:center;border-top:1px solid var(--border);background:white}
+.cb-inp{flex:1;border:1.5px solid var(--n20);border-radius:20px;padding:8px 13px;font-family:var(--fb);font-size:0.85rem;color:var(--text);background:white;outline:none;transition:border-color 0.2s}
+.cb-inp:focus{border-color:var(--g60)}
+.cb-inp::placeholder{color:var(--n40)}
+.cb-send{background:var(--g60);color:white;border:none;border-radius:20px;padding:8px 18px;font-family:var(--fb);font-size:0.83rem;font-weight:700;cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.cb-send:hover{background:var(--g80)}
+.cb-send:disabled{background:var(--n20);cursor:not-allowed}
+
+/* COMMONS */
+section{padding:clamp(56px,7vw,90px) 0}
+.section-alt{background:var(--n5)}
+.container{max-width:1140px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+.section-head{text-align:center;max-width:600px;margin:0 auto 3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:0.73rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--g60);background:var(--g5);border:1px solid var(--g10);border-radius:30px;padding:5px 14px;margin-bottom:0.9rem}
+.eyebrow.b{color:var(--b60);background:var(--b5);border-color:var(--b10)}
+h2{font-family:var(--fd);font-size:clamp(1.9rem,3.5vw,2.75rem);font-weight:700;color:var(--gd);line-height:1.18}
+.section-head p{color:var(--tsoft);font-size:1rem;margin-top:0.6rem}
+
+/* PARTNERS */
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.pc{background:white;border-radius:var(--rl);overflow:hidden;border:1px solid var(--border);box-shadow:var(--ss);transition:box-shadow 0.22s,transform 0.22s}
+.pc:hover{box-shadow:var(--sl);transform:translateY(-5px)}
+.pc-hd{padding:1.1rem 1.3rem;display:flex;align-items:center;gap:12px}
+.pc-ico{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(255,255,255,0.22)}
+.pc-name{font-family:var(--fd);font-size:1.08rem;font-weight:700;color:white;line-height:1.2}
+.pc-sub2{font-size:0.7rem;color:rgba(255,255,255,0.72);margin-top:1px}
+.pc-bdg{margin-left:auto;background:rgba(255,255,255,0.18);border-radius:20px;padding:3px 10px;font-size:0.67rem;font-weight:700;color:white;white-space:nowrap;border:1px solid rgba(255,255,255,0.28);flex-shrink:0}
+.pc-bd{padding:1.1rem 1.3rem}
+.pc-desc2{font-size:0.83rem;color:var(--tsoft);line-height:1.6;margin-bottom:0.85rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0.85rem}
+.pc-tag{background:var(--g5);color:var(--g80);border:1px solid var(--g10);border-radius:20px;padding:3px 10px;font-size:0.7rem;font-weight:600}
+.pc-deal{background:var(--g5);border:1px solid var(--g20);border-radius:var(--rs);padding:0.6rem 0.85rem;font-size:0.78rem;color:var(--g80);font-weight:600}
+
+/* ACCRED STRIP */
+.accred-strip{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:1.3rem 2rem;margin-top:2.5rem;display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center}
+.accred-item{text-align:center;padding:0 2rem}
+.accred-item+.accred-item{border-left:1px solid var(--n10)}
+.accred-name{font-family:var(--fd);font-size:1.22rem;font-weight:700;line-height:1}
+.accred-desc{font-size:0.66rem;color:var(--tsoft);margin-top:3px;line-height:1.35}
+@media(max-width:580px){.accred-item{padding:0.6rem 1rem}.accred-item+.accred-item{border-left:none;border-top:1px solid var(--n10)}}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.stat-card{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:1.4rem;text-align:center;box-shadow:var(--ss)}
+.stat-num{font-family:var(--fd);font-size:2.3rem;font-weight:700;color:var(--g60);line-height:1}
+.stat-lbl{font-size:0.77rem;color:var(--tsoft);margin-top:5px;font-weight:500}
+
+/* HOW IT WORKS */
+.steps-box{background:white;border:1px solid var(--border);border-radius:var(--rxl);padding:clamp(1.5rem,4vw,3rem);box-shadow:var(--sm)}
+.steps-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:start}
+@media(max-width:700px){.steps-row{grid-template-columns:1fr 1fr}.step-arr{display:none}}
+@media(max-width:400px){.steps-row{grid-template-columns:1fr}}
+.step{padding:1.1rem 0.8rem;text-align:center}
+.step-n{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--g60),var(--b60));color:white;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;box-shadow:0 4px 16px rgba(47,168,102,0.25)}
+.step h4{font-family:var(--fd);font-size:0.98rem;font-weight:700;color:var(--gd);margin-bottom:0.25rem}
+.step p{font-size:0.78rem;color:var(--tsoft);line-height:1.5}
+.step-arr{display:flex;align-items:flex-start;padding-top:2.2rem;color:var(--g20);font-size:1.2rem}
+
+/* SPECIALTIES */
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.spec-card{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem 1rem;text-align:center;text-decoration:none;display:block;transition:all 0.2s}
+.spec-card:hover{box-shadow:var(--sm);transform:translateY(-4px);border-color:var(--g20)}
+.spec-icon{font-size:2rem;margin-bottom:0.55rem;display:block}
+.spec-name{font-family:var(--fd);font-size:0.96rem;font-weight:700;color:var(--gd)}
+.spec-num{font-size:0.7rem;color:var(--g60);font-weight:600;margin-top:2px}
+
+/* COUNTRIES */
+.countries-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(198px,1fr));gap:12px}
+.cc{background:white;border:1px solid var(--border);border-radius:var(--rm);padding:1rem 1.2rem;display:flex;align-items:center;gap:12px;transition:all 0.2s}
+.cc:hover{box-shadow:var(--sm);transform:translateY(-2px)}
+.cflag{font-size:26px;flex-shrink:0}
+.cname{font-weight:600;font-size:0.87rem;color:var(--text)}
+.cnum{font-size:0.73rem;color:var(--g60);font-weight:600;margin-top:1px}
+.cbar{height:3px;background:var(--g10);border-radius:3px;margin-top:5px;overflow:hidden}
+.cbar-fill{height:100%;background:linear-gradient(to right,var(--g40),var(--g60));border-radius:3px}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:20px}
+.testi{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:1.5rem;box-shadow:var(--ss)}
+.t-stars{color:#e8a020;font-size:0.88rem;margin-bottom:0.7rem;letter-spacing:2px}
+.t-text{font-size:0.87rem;color:var(--tsoft);line-height:1.65;margin-bottom:1.1rem;font-style:italic}
+.t-person{display:flex;align-items:center;gap:10px}
+.t-av{width:37px;height:37px;border-radius:50%;background:var(--g10);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.83rem;color:var(--gd);flex-shrink:0}
+.t-name{font-weight:600;font-size:0.85rem;color:var(--text)}
+.t-meta{font-size:0.73rem;color:var(--tsoft)}
+.t-tag{display:inline-block;margin-top:3px;background:var(--b5);color:var(--b60);border-radius:6px;padding:2px 8px;font-size:0.67rem;font-weight:600}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--gd) 0%,#1a5299 100%);padding:68px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.cta-band h2{color:white;margin-bottom:0.8rem}
+.cta-band p{color:rgba(255,255,255,0.7);margin-bottom:2rem;font-size:1rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.ci{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.ci-ico{width:40px;height:40px;background:var(--g10);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-lbl{font-weight:600;font-size:0.85rem;color:var(--text)}
+.ci-val{color:var(--g60);font-size:0.87rem;text-decoration:none}
+.ci-val:hover{text-decoration:underline}
+.cform{background:white;border:1px solid var(--border);border-radius:var(--rl);padding:2rem;box-shadow:var(--sm)}
+.fg{margin-bottom:1rem}
+.fg label{display:block;font-size:0.78rem;font-weight:600;color:var(--n60);margin-bottom:4px}
+.fg input,.fg select,.fg textarea{width:100%;border:1.5px solid var(--n20);border-radius:var(--rs);padding:10px 13px;font-family:var(--fb);font-size:0.87rem;color:var(--text);background:white;outline:none;transition:border-color 0.2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g60)}
+.fg textarea{resize:vertical;min-height:88px}
+.err-border{border-color:#e24b4a !important}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--g60),var(--b60));color:white;border:none;border-radius:30px;padding:13px;font-family:var(--fb);font-size:0.93rem;font-weight:600;cursor:pointer;transition:opacity 0.2s}
+.btn-submit:hover{opacity:0.9}
+.success-msg{display:none;background:var(--g5);border:1px solid var(--g20);border-radius:var(--rm);padding:0.85rem;font-size:0.86rem;color:var(--g80);margin-bottom:1rem;text-align:center}
+
+/* FOOTER */
+footer{background:var(--gd);color:rgba(255,255,255,0.65);padding:52px 0 28px}
+.fi{max-width:1140px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+@media(max-width:860px){.fi{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:480px){.fi{grid-template-columns:1fr}}
+.f-logo{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:white;margin-bottom:0.5rem}
+.f-brand p{font-size:0.82rem;line-height:1.6;max-width:240px;margin-bottom:1rem}
+.f-contact a{display:block;color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.82rem;margin-bottom:5px;transition:color 0.2s}
+.f-contact a:hover{color:white}
+.f-col h5{color:white;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+.f-col a{display:block;color:rgba(255,255,255,0.48);text-decoration:none;font-size:0.82rem;margin-bottom:7px;transition:color 0.2s}
+.f-col a:hover{color:white}
+.f-bottom{max-width:1140px;margin:2rem auto 0;padding:1.4rem clamp(1rem,4vw,2.5rem) 0;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.f-bottom p{font-size:0.75rem;color:rgba(255,255,255,0.28)}
+
+/* UTIL */
+.btn-green{background:var(--g60);color:white;border:none;border-radius:30px;padding:13px 30px;font-family:var(--fb);font-size:0.92rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s}
+.btn-green:hover{background:var(--g80)}
+.btn-wh{background:white;color:var(--gd);border:none;border-radius:30px;padding:13px 30px;font-family:var(--fb);font-size:0.92rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity 0.2s}
+.btn-wh:hover{opacity:0.9}
+@media(max-width:480px){.partners-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://gupta-krishan.github.io/MedYatra/"},
+        {"@type":"ListItem","position":2,"name":"Treatments","item":"https://gupta-krishan.github.io/MedYatra/treatments.html"},
+        {"@type":"ListItem","position":3,"name":"Pricing","item":"https://gupta-krishan.github.io/MedYatra/pricing.html"},
+        {"@type":"ListItem","position":4,"name":"About","item":"https://gupta-krishan.github.io/MedYatra/about.html"}
+      ]
+    },
+    {
+      "@type": "MedicalOrganization",
+      "name": "MedYatra",
+      "url": "https://gupta-krishan.github.io/MedYatra/",
+      "logo": "https://gupta-krishan.github.io/MedYatra/logo.svg",
+      "description": "India's leading medical tourism facilitation platform connecting international patients with JCI and NABH accredited hospitals for cardiac surgery, cancer treatment, knee replacement, organ transplants and IVF.",
+      "telephone": "+91-9717019785",
+      "email": "healinindia@gmail.com",
+      "address": {"@type":"PostalAddress","addressLocality":"New Delhi","addressRegion":"Delhi","addressCountry":"IN"},
+      "medicalSpecialty": ["Cardiology","Oncology","Orthopedic Surgery","Neurology","Transplant Surgery","Reproductive Medicine"],
+      "availableService": [
+        {"@type":"MedicalProcedure","name":"Bypass Surgery India","description":"Coronary artery bypass graft surgery in India. Cost: $4,500–$7,000."},
+        {"@type":"MedicalProcedure","name":"Knee Replacement India","description":"Total knee replacement in India. Cost: $5,000–$8,500."},
+        {"@type":"MedicalProcedure","name":"Cancer Treatment India","description":"Oncology treatment in India. Cost: $6,000–$14,000."},
+        {"@type":"MedicalProcedure","name":"IVF Treatment India","description":"IVF fertility treatment in India. Cost: $2,500–$5,500 per cycle."},
+        {"@type":"MedicalProcedure","name":"Kidney Transplant India","description":"Kidney transplant in India. Cost: $12,000–$20,000."}
+      ],
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"312","bestRating":"5"},
+      "priceRange": "$20–$40",
+      "areaServed": ["Bangladesh","Afghanistan","Iraq","Nigeria","Kenya","United States","United Kingdom","Canada","Oman","South Africa"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does bypass surgery cost in India?",
+          "acceptedAnswer": {"@type":"Answer","text":"Bypass surgery (CABG) costs $4,500–$7,000 in India at JCI-accredited hospitals like Apollo Chennai, Narayana Health Bengaluru and Escorts Heart Institute Delhi. This compares to $80,000–$120,000 in the USA — a saving of over 90%."}
+        },
+        {
+          "@type": "Question",
+          "name": "Which is the best hospital in India for international patients?",
+          "acceptedAnswer": {"@type":"Answer","text":"The best hospitals in India for international patients are Apollo Hospitals (Chennai, Delhi), Medanta The Medicity (Gurugram), Narayana Health (Bengaluru), Tata Memorial Centre (Mumbai) for cancer, and AIIMS Delhi. All hold JCI or NABH international accreditation."}
+        },
+        {
+          "@type": "Question",
+          "name": "How much does knee replacement cost in India?",
+          "acceptedAnswer": {"@type":"Answer","text":"Total knee replacement in India costs $5,000–$8,500 at top hospitals including Apollo, Medanta and Kokilaben. The same surgery costs $35,000–$70,000 in the USA. Robot-assisted MAKO knee replacement is available at Apollo Delhi."}
+        },
+        {
+          "@type": "Question",
+          "name": "How much does IVF cost in India?",
+          "acceptedAnswer": {"@type":"Answer","text":"IVF treatment in India costs $2,500–$5,500 per cycle at top fertility clinics like Nova IVF, Milann and Cloudnine. This compares to $15,000–$30,000 per cycle in the USA. India's IVF success rate is 40–55%, comparable to top European clinics."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a medical visa to travel to India for treatment?",
+          "acceptedAnswer": {"@type":"Answer","text":"Yes, international patients need an Indian Medical e-Visa (e-Medvisa). Apply online at indianvisaonline.gov.in with a hospital invitation letter, medical reports and passport. Approval takes 3–5 business days. MedYatra prepares your invitation letter as part of the $40 Premium Plan."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is medical treatment in India safe?",
+          "acceptedAnswer": {"@type":"Answer","text":"Yes, at accredited hospitals. India has 340+ JCI and NABH accredited hospitals — the same international standard as US hospitals. Surgeons at Apollo, Medanta and Narayana Health are trained at institutions like Johns Hopkins, Mayo Clinic and NHS. Equipment is imported from Medtronic, Boston Scientific and Zimmer Biomet."}
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://gupta-krishan.github.io/MedYatra/",
+      "name": "MedYatra",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gupta-krishan.github.io/MedYatra/treatments.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.svg" alt="MedYatra" height="42"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="pricing.html">Plans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-ai-btn" onclick="focusChat()">
+    <span class="pulse-dot"></span><span class="ai-label">Try AI Checker</span>
+  </button>
+  <a class="nav-plan-btn" href="pricing.html">Get Plan <span class="chip">$40</span></a>
+</nav>
+
+<!-- AI HERO -->
+<section class="ai-hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="hero-dot"></span> World's First AI Medical Tourism Guide</div>
+      <h1>Describe Symptoms.<br/>Find <em>Your Hospital</em><br/>in India. Free.</h1>
+      <p class="hero-desc">Our AI analyses your symptoms instantly — suggesting the right specialist, best Indian hospital, and exact costs. Completely free. No signup. Powered by Claude AI.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="focusChat()">🔍 Check My Symptoms →</button>
+        <a class="btn-outline-w" href="treatments.html">Browse Treatments</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-avs">
+          <div class="tav" style="background:#d4edda">JM</div>
+          <div class="tav" style="background:#dde8f7">FA</div>
+          <div class="tav" style="background:#fce8d5">AO</div>
+          <div class="tav" style="background:#d4edda">+</div>
+        </div>
+        <div class="trust-txt"><strong>1.4 million+ patients</strong> treated in India<br/>from 68 countries · Save up to 80% vs USA</div>
+      </div>
+    </div>
+
+    <!-- LIVE CHAT BOX -->
+    <div>
+      <div class="chat-box">
+        <div class="cb-header">
+          <div class="cb-icon">🤖</div>
+          <div><div class="cb-title">MedYatra AI Health Assistant</div><div class="cb-sub">Powered by Claude AI · Free · Instant</div></div>
+          <div class="cb-status"><span class="status-dot"></span> Online now</div>
+        </div>
+        <div class="cb-msgs" id="cbMsgs">
+          <div class="bubble">
+            <div class="bav ai">MY</div>
+            <div class="btxt ai">👋 Hello! Tell me your symptoms and I'll find the right hospital in India for you — with costs.<br/><br/>Try: <em>"chest pain when I walk"</em> or tap a symptom below.</div>
+          </div>
+        </div>
+        <div class="cb-chips">
+          <button class="qchip" onclick="quickMsg('Chest pain and breathlessness during exercise')">💛 Chest pain</button>
+          <button class="qchip" onclick="quickMsg('Knee pain, difficulty walking')">🦵 Knee pain</button>
+          <button class="qchip" onclick="quickMsg('Found a lump or unusual swelling')">🔴 Lump</button>
+          <button class="qchip" onclick="quickMsg('Trying to get pregnant for over a year')">👶 Fertility</button>
+          <button class="qchip" onclick="quickMsg('Severe back pain down my leg')">🦴 Back pain</button>
+          <button class="qchip" onclick="quickMsg('Kidney failure, need transplant')">💊 Kidney</button>
+          <button class="qchip" onclick="quickMsg('Blurry vision and eye pain')">👁️ Eye</button>
+          <button class="qchip" onclick="quickMsg('Brain tumour, need surgery')">🧠 Brain</button>
+        </div>
+        <div class="cb-input">
+          <input class="cb-inp" id="cbInp" type="text" placeholder="Type your symptoms here..." onkeydown="if(event.key==='Enter')sendChat()"/>
+          <button class="cb-send" id="cbSend" onclick="sendChat()">Send ↗</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section class="section section-alt" id="partners">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">🤝 Verified Hospital Network</div>
+      <h2>Partnered with India's Top Hospitals</h2>
+      <p>MedYatra has direct arrangements with India's most reputed hospital networks — giving patients priority access, pre-negotiated rates and exclusive benefits.</p>
+    </div>
+    <div class="partners-grid">
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#003b7a,#0066cc)">
+          <div class="pc-ico">🏥</div>
+          <div><div class="pc-name">Apollo Hospitals</div><div class="pc-sub2">Pan India · JCI Accredited · 71+ hospitals · Est. 1983</div></div>
+          <div class="pc-bdg">⭐ Premium</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">India's largest private hospital network with 10,000+ beds. Internationally trained surgeons. Ranked #1 for international patients across cardiac, cancer and orthopaedics.</p>
+          <div class="pc-tags"><span class="pc-tag">❤️ Cardiac</span><span class="pc-tag">🎗️ Oncology</span><span class="pc-tag">🦴 Ortho</span><span class="pc-tag">🧠 Neuro</span><span class="pc-tag">👶 IVF</span></div>
+          <div class="pc-deal">🎁 Priority appointment + free pre-travel consultation for MedYatra patients</div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#1a6b3c,#2fa866)">
+          <div class="pc-ico">🌿</div>
+          <div><div class="pc-name">Vaidam Health</div><div class="pc-sub2">New Delhi · Medical Tourism Network · 1,500+ hospitals</div></div>
+          <div class="pc-bdg">Partner</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">India's leading medical tourism facilitation network. MedYatra patients access Vaidam's entire verified hospital network — 1,500+ hospitals across 50+ cities in India.</p>
+          <div class="pc-tags"><span class="pc-tag">💊 Transplant</span><span class="pc-tag">👶 Fertility</span><span class="pc-tag">🎗️ Cancer</span><span class="pc-tag">❤️ Cardiac</span></div>
+          <div class="pc-deal">🎁 10% off coordination + verified doctor shortlist within 24 hours</div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#5b2181,#8e44b3)">
+          <div class="pc-ico">⚕️</div>
+          <div><div class="pc-name">Medanta — The Medicity</div><div class="pc-sub2">Gurugram · JCI Accredited · 1,600 beds · 45 specialties</div></div>
+          <div class="pc-bdg">Partner</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">India's largest private integrated medical city, led by Dr. Naresh Trehan. World-renowned for cardiac surgery, liver transplants and complex neurosurgery.</p>
+          <div class="pc-tags"><span class="pc-tag">❤️ Cardiac</span><span class="pc-tag">💊 Transplant</span><span class="pc-tag">🧠 Neuro</span><span class="pc-tag">🦴 Ortho</span></div>
+          <div class="pc-deal">🎁 Dedicated international desk + same-week appointment guarantee</div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#a02418,#e74c3c)">
+          <div class="pc-ico">🫀</div>
+          <div><div class="pc-name">Narayana Health</div><div class="pc-sub2">Bengaluru / Kolkata · NABH · World's highest cardiac volume</div></div>
+          <div class="pc-bdg">Partner</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">Performs more cardiac surgeries per month than most countries. Bypass from $4,500. Mortality under 1% — published publicly. Founded by Dr. Devi Shetty (trained at Guy's Hospital, London).</p>
+          <div class="pc-tags"><span class="pc-tag">❤️ Cardiac</span><span class="pc-tag">🎗️ Cancer</span><span class="pc-tag">🦴 Ortho</span></div>
+          <div class="pc-deal">🎁 Lowest guaranteed bypass cost + same-week surgery</div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#1a3c5e,#2e6da4)">
+          <div class="pc-ico">🎗️</div>
+          <div><div class="pc-name">Tata Memorial Centre</div><div class="pc-sub2">Mumbai · WHO Collaborating Centre · Est. 1941</div></div>
+          <div class="pc-bdg">Partner</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">India's premier cancer hospital, WHO recognised. Government rates. All cancer types — surgery, chemotherapy, radiation, immunotherapy and proton therapy. Rated 5.0/5 by patients.</p>
+          <div class="pc-tags"><span class="pc-tag">🎗️ All Cancers</span><span class="pc-tag">⚛️ Proton Therapy</span><span class="pc-tag">🩸 Blood Cancer</span></div>
+          <div class="pc-deal">🎁 Fast-track OPD + report review within 48 hours</div>
+        </div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-hd" style="background:linear-gradient(135deg,#a06000,#e6920a)">
+          <div class="pc-ico">🏨</div>
+          <div><div class="pc-name">Fortis Healthcare</div><div class="pc-sub2">Pan India · JCI Accredited · 36 hospitals</div></div>
+          <div class="pc-bdg">Partner</div>
+        </div>
+        <div class="pc-bd">
+          <p class="pc-desc2">36 hospitals across India. CyberKnife radiosurgery, MAKO robotic joint replacement. Strong international patient programmes in Delhi, Mumbai and Bengaluru.</p>
+          <div class="pc-tags"><span class="pc-tag">🧠 Neuro</span><span class="pc-tag">🦴 Ortho</span><span class="pc-tag">❤️ Cardiac</span><span class="pc-tag">🎗️ Cancer</span></div>
+          <div class="pc-deal">🎁 Free second opinion + 15% discount for MedYatra patients</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="accred-strip">
+      <div class="accred-item"><div class="accred-name" style="color:#003b7a">JCI</div><div class="accred-desc">Joint Commission<br/>International</div></div>
+      <div class="accred-item"><div class="accred-name" style="color:var(--g60)">NABH</div><div class="accred-desc">National Accreditation<br/>Board for Hospitals</div></div>
+      <div class="accred-item"><div class="accred-name" style="color:#c0392b">WHO</div><div class="accred-desc">World Health<br/>Organisation</div></div>
+      <div class="accred-item"><div class="accred-name" style="color:#5b2181">NABL</div><div class="accred-desc">National Accreditation<br/>Board for Labs</div></div>
+      <div class="accred-item"><div class="accred-name" style="color:#a06000">ISO</div><div class="accred-desc">ISO 9001:2015<br/>Certified</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">1.4M+</div><div class="stat-lbl">International patients per year</div></div>
+      <div class="stat-card"><div class="stat-num">68</div><div class="stat-lbl">Countries we serve</div></div>
+      <div class="stat-card"><div class="stat-num">70%</div><div class="stat-lbl">Average saving vs USA / UK</div></div>
+      <div class="stat-card"><div class="stat-num">340+</div><div class="stat-lbl">JCI / NABH accredited hospitals</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-lbl">Waitlist — treated within days</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt" id="howitworks">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow b">✦ Simple Process</div>
+      <h2>How MedYatra Works</h2>
+      <p>From your first symptom check to full recovery — we handle every step of your journey.</p>
+    </div>
+    <div class="steps-box">
+      <div class="steps-row">
+        <div class="step"><div class="step-n">1</div><h4>AI Symptom Check</h4><p>Describe symptoms. Get specialist and hospital suggestions instantly — free.</p></div>
+        <div class="step-arr">→</div>
+        <div class="step"><div class="step-n">2</div><h4>Hospital Shortlist</h4><p>Top 3 hospitals matched to your condition with real cost estimates.</p></div>
+        <div class="step-arr">→</div>
+        <div class="step"><div class="step-n">3</div><h4>Surgeon Video Call</h4><p>Pre-travel consultation with your shortlisted surgeon before booking flights.</p></div>
+        <div class="step-arr">→</div>
+        <div class="step"><div class="step-n">4</div><h4>Visa & Travel</h4><p>We prepare your medical visa letter and arrange airport pickup.</p></div>
+        <div class="step-arr">→</div>
+        <div class="step"><div class="step-n">5</div><h4>Treat & Recover</h4><p>24/7 concierge during your stay + 3-month follow-up after you return.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="pricing.html" class="btn-green">Start Your Journey — $40 Plan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">🔬 Medical Specialties</div>
+      <h2>Top Treatment Categories</h2>
+      <p>Browse by specialty — hospitals, doctors, costs and outcomes for every major procedure.</p>
+    </div>
+    <div class="spec-grid">
+      <a class="spec-card" href="treatments.html#cardiac"><span class="spec-icon">❤️</span><div class="spec-name">Cardiac Care</div><div class="spec-num">120K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#cancer"><span class="spec-icon">🎗️</span><div class="spec-name">Oncology</div><div class="spec-num">90K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#ortho"><span class="spec-icon">🦴</span><div class="spec-name">Orthopaedics</div><div class="spec-num">200K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#neuro"><span class="spec-icon">🧠</span><div class="spec-name">Neurology</div><div class="spec-num">80K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#transplant"><span class="spec-icon">💊</span><div class="spec-name">Transplants</div><div class="spec-num">15K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#fertility"><span class="spec-icon">👶</span><div class="spec-name">Fertility & IVF</div><div class="spec-num">80K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#eye"><span class="spec-icon">👁️</span><div class="spec-name">Eye Surgery</div><div class="spec-num">150K+ patients/yr</div></a>
+      <a class="spec-card" href="treatments.html#dental"><span class="spec-icon">🦷</span><div class="spec-name">Dental & Cosmetic</div><div class="spec-num">50K+ patients/yr</div></a>
+    </div>
+    <div style="text-align:center;margin-top:1.8rem">
+      <a href="treatments.html" style="color:var(--g60);font-weight:600;text-decoration:none;font-size:0.91rem">View all treatments with hospitals & cost breakdowns →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">🌍 Source Countries</div>
+      <h2>Where Patients Come From</h2>
+      <p>Over 1.4 million international patients chose India for medical care last year, from 68 countries.</p>
+    </div>
+    <div class="countries-grid">
+      <div class="cc"><div class="cflag">🇧🇩</div><div><div class="cname">Bangladesh</div><div class="cnum">~360,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:95%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇦🇫</div><div><div class="cname">Afghanistan</div><div class="cnum">~180,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:72%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇮🇶</div><div><div class="cname">Iraq</div><div class="cnum">~95,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:52%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇳🇬</div><div><div class="cname">Nigeria</div><div class="cnum">~85,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:46%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇰🇪</div><div><div class="cname">Kenya</div><div class="cnum">~70,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:38%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇿🇦</div><div><div class="cname">South Africa</div><div class="cnum">~55,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:30%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇺🇸</div><div><div class="cname">United States</div><div class="cnum">~48,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:26%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇬🇧</div><div><div class="cname">United Kingdom</div><div class="cnum">~38,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:21%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇴🇲</div><div><div class="cname">Oman</div><div class="cnum">~42,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:23%"></div></div></div></div>
+      <div class="cc"><div class="cflag">🇨🇦</div><div><div class="cname">Canada</div><div class="cnum">~30,000 / yr</div><div class="cbar"><div class="cbar-fill" style="width:18%"></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">💬 Patient Stories</div>
+      <h2>Real People. Real Results.</h2>
+      <p>Thousands of patients share their India experience every year.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi"><div class="t-stars">★★★★★</div><p class="t-text">"I was quoted $95,000 for bypass surgery in Houston. MedYatra's AI identified my condition and matched me to Apollo Chennai. I paid $5,800 all-inclusive. The surgeon trained at Johns Hopkins."</p><div class="t-person"><div class="t-av" style="background:#ddf0e6">JM</div><div><div class="t-name">James Mitchell</div><div class="t-meta">🇺🇸 Houston, USA</div><div class="t-tag">Bypass Surgery</div></div></div></div>
+      <div class="testi"><div class="t-stars">★★★★★</div><p class="t-text">"My mother's knee replacement in Medanta was perfectly managed. The AI tool showed exactly what to expect. The concierge arranged visa, hotel, airport transfers — we felt like family, not patients."</p><div class="t-person"><div class="t-av" style="background:#dde8f7">FA</div><div><div class="t-name">Fatima Al-Rashidi</div><div class="t-meta">🇮🇶 Baghdad, Iraq</div><div class="t-tag">Knee Replacement</div></div></div></div>
+      <div class="testi"><div class="t-stars">★★★★★</div><p class="t-text">"IVF in the UK failed 3 times. Nova IVF Bengaluru succeeded on our first cycle. We are expecting twins. MedYatra arranged the visa, hotel and doctor visit — completely stress-free."</p><div class="t-person"><div class="t-av" style="background:#fce8d5">SB</div><div><div class="t-name">Sarah Boateng</div><div class="t-meta">🇬🇧 London, UK</div><div class="t-tag">IVF / Fertility</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container" style="position:relative;z-index:1">
+    <h2>Ready to Begin Your Healing Journey?</h2>
+    <p>Join 1.4M+ patients who chose India. Our $40 Premium Plan covers hospital matching, visa, concierge and follow-up.</p>
+    <a href="pricing.html" class="btn-wh">See All Plans & Pricing →</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">📞 Free Consultation</div>
+      <h2>Get In Touch. No Obligation.</h2>
+      <p>Our medical travel advisors respond within 4 hours, 7 days a week.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="ci"><div class="ci-ico">📧</div><div><div class="ci-lbl">Email</div><a class="ci-val" href="mailto:healinindia@gmail.com">healinindia@gmail.com</a></div></div>
+        <div class="ci"><div class="ci-ico">📱</div><div><div class="ci-lbl">WhatsApp / Call</div><a class="ci-val" href="tel:+919717019785">+91 9717019785</a></div></div>
+        <div class="ci"><div class="ci-ico">🕐</div><div><div class="ci-lbl">Response Time</div><span style="font-size:0.87rem;color:var(--tsoft)">Within 4 hours · 7 days a week</span></div></div>
+        <div class="ci"><div class="ci-ico">🌍</div><div><div class="ci-lbl">Languages</div><span style="font-size:0.87rem;color:var(--tsoft)">English · Arabic · French · Bengali · Swahili</span></div></div>
+        <div style="background:var(--g5);border:1px solid var(--g10);border-radius:var(--rm);padding:1rem 1.2rem;margin-top:1rem">
+          <div style="font-weight:700;font-size:0.84rem;color:var(--gd);margin-bottom:4px">🔒 Privacy Guaranteed</div>
+          <div style="font-size:0.79rem;color:var(--tsoft)">All medical information is 100% confidential and never shared with third parties.</div>
+        </div>
+      </div>
+      <div class="cform">
+        <h3 style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--gd);margin-bottom:1.3rem">Send a Free Enquiry</h3>
+        <div class="success-msg" id="contactMsg">✅ Thank you! We'll contact you within 4 hours on WhatsApp at +91 9717019785.</div>
+        <div class="fg"><label>Full Name *</label><input id="cf-name" type="text" placeholder="Your full name"/></div>
+        <div class="fg"><label>Email *</label><input id="cf-email" type="email" placeholder="your@email.com"/></div>
+        <div class="fg"><label>Country</label>
+          <select id="cf-country">
+            <option value="">Select country...</option>
+            <option>Bangladesh</option><option>Afghanistan</option><option>Iraq</option>
+            <option>Nigeria</option><option>Kenya</option><option>USA</option>
+            <option>United Kingdom</option><option>Canada</option><option>Oman</option>
+            <option>South Africa</option><option>India</option><option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Treatment Needed</label>
+          <select id="cf-treatment">
+            <option value="">Select treatment...</option>
+            <option>Cardiac (Bypass, Valve, Angioplasty)</option>
+            <option>Cancer / Oncology</option>
+            <option>Orthopaedics (Knee, Hip, Spine)</option>
+            <option>Neurology / Brain</option>
+            <option>Organ Transplant</option>
+            <option>Fertility / IVF</option>
+            <option>Eye Surgery</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea id="cf-msg" placeholder="Describe your condition or question..."></textarea></div>
+        <button class="btn-submit" onclick="submitContact()">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- SEO TEXT BLOCK — crawlable content for Google -->
+<section style="background:var(--n5);padding:48px 0 40px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)">
+    <h2 style="font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--gd);margin-bottom:1rem">Medical Tourism in India — Complete Guide 2025</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px" class="seo-cols">
+      <div>
+        <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.6rem">Why Choose India for Medical Treatment?</h3>
+        <p style="font-size:0.88rem;color:var(--tsoft);line-height:1.75;margin-bottom:1rem">India is the world's fastest-growing medical tourism destination, welcoming over 1.4 million international patients annually. The primary reason is cost — medical treatment in India costs 60–80% less than in the USA, UK or Europe, with no compromise on quality. Hospitals like Apollo, Medanta and Tata Memorial hold JCI accreditation — the same gold standard as American hospitals. Surgeons are internationally trained, equipment is imported from the USA and Europe, and English is the working language at all major centres.</p>
+        <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.6rem">Medical Tourism Cost Comparison: India vs USA</h3>
+        <p style="font-size:0.88rem;color:var(--tsoft);line-height:1.75">Bypass surgery costs $4,500–$7,000 in India vs $80,000–$120,000 in the USA. Knee replacement costs $5,000–$8,500 in India vs $35,000–$70,000. IVF treatment costs $2,500–$5,500 per cycle in India vs $15,000–$30,000. Kidney transplant costs $12,000–$20,000 in India vs $150,000–$300,000. Liver transplant costs $25,000–$45,000 in India vs $300,000–$600,000.</p>
+      </div>
+      <div>
+        <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.6rem">Top Hospitals in India for International Patients</h3>
+        <p style="font-size:0.88rem;color:var(--tsoft);line-height:1.75;margin-bottom:1rem">The best hospitals in India for medical tourism include Apollo Hospitals (Chennai, Delhi, Mumbai), Medanta The Medicity (Gurugram), Narayana Health (Bengaluru, Kolkata), Tata Memorial Centre (Mumbai), AIIMS Delhi, Fortis Memorial Research Institute (Gurugram), CMC Vellore, Escorts Heart Institute (Delhi) and NIMHANS (Bengaluru). All hold JCI or NABH international accreditation.</p>
+        <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.6rem">Medical Visa for India — How to Apply</h3>
+        <p style="font-size:0.88rem;color:var(--tsoft);line-height:1.75">International patients need an Indian Medical e-Visa (e-Medvisa), applied online at indianvisaonline.gov.in. Requirements include a hospital invitation letter, medical reports, passport and return flight details. Approval takes 3–5 business days. MedYatra prepares your invitation letter as part of the $40 Premium Plan. The visa allows a 60-day stay and can be extended for ongoing treatment.</p>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--n20)">
+      <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.6rem">Countries That Send the Most Patients to India</h3>
+      <p style="font-size:0.88rem;color:var(--tsoft);line-height:1.75">The top source countries for medical tourism to India are Bangladesh (360,000 patients/year), Afghanistan (180,000), Iraq (95,000), Nigeria (85,000), Kenya (70,000), South Africa (55,000), USA (48,000), Oman (42,000), United Kingdom (38,000) and Canada (30,000). Patients from the USA come to avoid high insurance costs. Patients from the UK come to avoid long NHS waiting lists. Patients from Africa and the Middle East come because many procedures are unavailable or too expensive in their home countries.</p>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--n20)">
+      <h3 style="font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--gd);margin-bottom:0.8rem">Latest Guides from MedYatra</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+        <a href="blog/medical-tourism-india-guide-2025.html" style="background:white;border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;text-decoration:none;display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 6px 24px rgba(15,80,50,0.12)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--g60);margin-bottom:5px">Complete Guide</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gd);line-height:1.3">Medical Tourism in India 2025 — Everything You Need to Know</div>
+          <div style="font-size:0.78rem;color:var(--tsoft);margin-top:5px">Costs · Hospitals · Visa · Safety guide →</div>
+        </a>
+        <a href="blog/bypass-surgery-cost-india-2025.html" style="background:white;border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;text-decoration:none;display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 6px 24px rgba(15,80,50,0.12)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--g60);margin-bottom:5px">Cardiac Guide</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gd);line-height:1.3">Bypass Surgery Cost in India — $4,500 vs $90,000 in USA</div>
+          <div style="font-size:0.78rem;color:var(--tsoft);margin-top:5px">Hospitals · Full breakdown · Visa →</div>
+        </a>
+        <a href="blog/knee-replacement-cost-india-2025.html" style="background:white;border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;text-decoration:none;display:block;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow='0 6px 24px rgba(15,80,50,0.12)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--g60);margin-bottom:5px">Ortho Guide</div>
+          <div style="font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gd);line-height:1.3">Knee Replacement Cost in India — $5,000 vs $50,000 in USA</div>
+          <div style="font-size:0.78rem;color:var(--tsoft);margin-top:5px">Implants · Robots · Hospitals →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:700px){.seo-cols{grid-template-columns:1fr!important}}</style>
+
+<footer>
+  <div class="fi">
+    <div class="f-brand">
+      <div class="f-logo">MedYatra ✦</div>
+      <p>India's AI-powered medical tourism guide — connecting international patients with world-class hospitals since 2024.</p>
+      <div class="f-contact">
+        <a href="mailto:healinindia@gmail.com">📧 healinindia@gmail.com</a>
+        <a href="tel:+919717019785">📱 +91 9717019785</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Navigate</h5>
+      <a href="index.html">Home</a>
+      <a href="treatments.html">Treatments</a>
+      <a href="pricing.html">Plans & Pricing</a>
+      <a href="about.html">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="f-col">
+      <h5>Treatments</h5>
+      <a href="treatments.html#cardiac">Cardiac Surgery</a>
+      <a href="treatments.html#cancer">Cancer / Oncology</a>
+      <a href="treatments.html#ortho">Orthopaedics</a>
+      <a href="treatments.html#neuro">Neurology</a>
+      <a href="treatments.html#transplant">Transplants</a>
+      <a href="treatments.html#fertility">Fertility / IVF</a>
+    </div>
+    <div class="f-col">
+      <h5>Tools & Info</h5>
+      <a href="#home" onclick="setTimeout(focusChat,400)">AI Symptom Checker</a>
+      <a href="#partners">Hospital Partners</a>
+      <a href="pricing.html">$40 Best Plan</a>
+      <a href="#howitworks">How It Works</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <p>© 2025 MedYatra. For information only — not a substitute for professional medical advice.</p>
+    <p>Made with care in India 🇮🇳</p>
+  </div>
+</footer>
+
+<script>
+// ── SHEETS INTEGRATION ──
+var SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+function sendToSheet(d){
+  if(SHEETS_URL==='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') return;
+  fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(function(){});
+}
+
+// ── CONTACT FORM ──
+function submitContact(){
+  var name=document.getElementById('cf-name').value.trim();
+  var email=document.getElementById('cf-email').value.trim();
+  var country=document.getElementById('cf-country').value;
+  var treatment=document.getElementById('cf-treatment').value;
+  var msg=document.getElementById('cf-msg').value.trim();
+  var ok=true;
+  if(!name){document.getElementById('cf-name').classList.add('err-border');ok=false;}else document.getElementById('cf-name').classList.remove('err-border');
+  if(!email){document.getElementById('cf-email').classList.add('err-border');ok=false;}else document.getElementById('cf-email').classList.remove('err-border');
+  if(!ok) return;
+  sendToSheet({type:'ENQUIRY',timestamp:new Date().toISOString(),name:name,email:email,country:country,treatment:treatment,message:msg,source:'Homepage Contact Form'});
+  document.getElementById('contactMsg').style.display='block';
+  document.getElementById('cf-name').value='';
+  document.getElementById('cf-email').value='';
+  document.getElementById('cf-msg').value='';
+  document.getElementById('cf-country').value='';
+  document.getElementById('cf-treatment').value='';
+}
+
+// ── SCROLL TO CHAT ──
+function focusChat(){
+  document.getElementById('home').scrollIntoView({behavior:'smooth'});
+  setTimeout(function(){document.getElementById('cbInp').focus();},650);
+}
+
+// ── AI CHAT ──
+var ANTHROPIC_KEY='YOUR_ANTHROPIC_API_KEY_HERE';
+var history=[];
+var SYS='You are MedYatra AI — a warm, knowledgeable medical tourism guide for India. When someone describes symptoms, always respond in this exact format:\n\n**Possible conditions:** 2-3 possibilities.\n\n**Recommended specialist:** Exact doctor type.\n\n**Top 3 hospitals in India:**\n- Hospital Name, City — $X,000–$X,000\n- Hospital Name, City — $X,000–$X,000\n- Hospital Name, City — $X,000–$X,000\n\n**India vs USA cost:** One line comparison.\n\n**Time needed in India:** X weeks.\n\n**Your next step:** One clear action.\n\n*Disclaimer: General guidance only. Consult a qualified doctor. WhatsApp MedYatra at +91 9717019785 for personalised help.*\n\nRules: Be warm and reassuring. Use real Indian hospitals (Apollo, Medanta, Narayana, Tata Memorial, AIIMS, Fortis, CMC Vellore, NIMHANS, Escorts, Kokilaben). Give real USD cost ranges. Say "could be" not "you have". If emergency, say so clearly.';
+
+var FALLBACKS={
+  cardiac:{k:['chest','heart','bypass','cardiac','angina','valve','angio','breathless','palpitation'],r:'<strong>Possible conditions:</strong> Coronary artery disease, angina, or heart valve issue<br/><br/><strong>Recommended specialist:</strong> Interventional Cardiologist or Cardiac Surgeon<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Escorts Heart Institute, New Delhi — $4,500–$6,500</li><li>Apollo Hospitals, Chennai — $5,000–$7,000</li><li>Narayana Health, Bengaluru — $4,500–$6,000</li></ul><strong>India vs USA:</strong> Bypass surgery costs $4,500–$7,000 in India vs $80,000–$120,000 in USA.<br/><br/><strong>Time needed:</strong> 3–4 weeks.<br/><br/><strong>Next step:</strong> Share your ECG and angiogram via WhatsApp +91 9717019785<br/><br/><em>⚠️ General guidance only. Please consult a qualified doctor.</em>'},
+  ortho:{k:['knee','hip','joint','bone','arthritis','replacement','spine','back','disc','pain walking','spondylosis'],r:'<strong>Possible conditions:</strong> Osteoarthritis, joint degeneration or disc herniation<br/><br/><strong>Recommended specialist:</strong> Orthopaedic Surgeon<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Apollo Hospitals, New Delhi — $5,000–$8,500 (knee)</li><li>Medanta The Medicity, Gurugram — $5,500–$8,000</li><li>Kokilaben Hospital, Mumbai — $5,000–$7,500</li></ul><strong>India vs USA:</strong> Knee replacement costs $5,000–$8,500 in India vs $35,000–$70,000 in USA.<br/><br/><strong>Time needed:</strong> 2–3 weeks.<br/><br/><strong>Next step:</strong> Send your X-ray or MRI to +91 9717019785<br/><br/><em>⚠️ General guidance only. Consult a qualified doctor.</em>'},
+  cancer:{k:['cancer','lump','tumour','tumor','oncol','chemo','radiation','swelling','malignant','biopsy'],r:'<strong>Possible conditions:</strong> Requires oncology evaluation — could be benign or malignant<br/><br/><strong>Recommended specialist:</strong> Oncologist or Surgical Oncologist<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Tata Memorial Centre, Mumbai — $6,000–$14,000</li><li>HCG Cancer Centre, Bengaluru — $7,000–$15,000</li><li>Apollo Cancer Centre, Chennai — $8,000–$16,000</li></ul><strong>India vs USA:</strong> Cancer treatment costs $6,000–$14,000 in India vs $60,000–$150,000 in USA.<br/><br/><strong>Time needed:</strong> 4–8 weeks.<br/><br/><strong>Next step:</strong> Send biopsy and scan reports to +91 9717019785 urgently.<br/><br/><em>⚠️ Please see a doctor immediately for cancer symptoms.</em>'},
+  kidney:{k:['kidney','renal','dialysis','transplant kidney','creatinine','gfr','nephr'],r:'<strong>Possible conditions:</strong> Chronic kidney disease or end-stage renal failure<br/><br/><strong>Recommended specialist:</strong> Nephrologist + Transplant Surgeon<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Medanta The Medicity, Gurugram — $12,000–$18,000</li><li>CMC Vellore — $10,000–$15,000</li><li>Muljibhai Patel Urological Hospital, Nadiad — $11,000–$16,000</li></ul><strong>India vs USA:</strong> Kidney transplant costs $12,000–$20,000 in India vs $150,000–$300,000 in USA.<br/><br/><strong>Time needed:</strong> 3–5 weeks.<br/><br/><strong>Next step:</strong> Share creatinine and GFR reports via +91 9717019785<br/><br/><em>⚠️ General guidance only. Consult a qualified doctor.</em>'},
+  fertility:{k:['ivf','fertil','pregnant','conceiv','infertil','sperm','egg freezing','iui','embryo'],r:'<strong>Possible conditions:</strong> Infertility — ovulatory, tubal, uterine or male factor<br/><br/><strong>Recommended specialist:</strong> Reproductive Endocrinologist / IVF Specialist<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Nova IVF Fertility, Bengaluru — $2,500–$4,500/cycle</li><li>Milann Fertility Centre, Bengaluru — $2,800–$5,000/cycle</li><li>Cloudnine Hospitals — $3,000–$5,500/cycle</li></ul><strong>India vs USA:</strong> IVF costs $2,500–$5,500 per cycle in India vs $15,000–$30,000 in USA.<br/><br/><strong>Time needed:</strong> 12–18 days per cycle.<br/><br/><strong>Next step:</strong> Share AMH test and semen analysis via +91 9717019785<br/><br/><em>⚠️ General guidance only. Consult a qualified doctor.</em>'},
+  neuro:{k:['brain','seizure','epilepsy','stroke','nerve','paralysis','tumour brain','tumor brain','neurosurg'],r:'<strong>Possible conditions:</strong> Neurological condition — brain tumour, epilepsy or vascular issue<br/><br/><strong>Recommended specialist:</strong> Neurosurgeon or Neurologist<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>NIMHANS, Bengaluru — $7,000–$14,000</li><li>Fortis Memorial Research Institute, Gurugram — $5,000–$10,000</li><li>Max Healthcare, New Delhi — $4,500–$9,000</li></ul><strong>India vs USA:</strong> Brain surgery costs $7,000–$16,000 in India vs $70,000–$200,000 in USA.<br/><br/><strong>Time needed:</strong> 2–4 weeks.<br/><br/><strong>Next step:</strong> Share your MRI scan via +91 9717019785 urgently.<br/><br/><em>⚠️ Please see a doctor urgently for neurological symptoms.</em>'},
+  liver:{k:['liver','hepat','cirrhosis','transplant liver','jaundice','bilirubin'],r:'<strong>Possible conditions:</strong> Liver disease or end-stage liver failure<br/><br/><strong>Recommended specialist:</strong> Hepatologist + Liver Transplant Surgeon<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Sir Ganga Ram Hospital, New Delhi — $25,000–$40,000</li><li>Global Hospitals, Mumbai — $28,000–$45,000</li><li>Aster Medcity, Kochi — $26,000–$42,000</li></ul><strong>India vs USA:</strong> Liver transplant costs $25,000–$45,000 in India vs $300,000–$600,000 in USA.<br/><br/><strong>Time needed:</strong> 4–6 weeks.<br/><br/><strong>Next step:</strong> Share your LFT and liver scan reports via +91 9717019785<br/><br/><em>⚠️ General guidance only. Consult a doctor immediately.</em>'},
+  eye:{k:['eye','vision','cataract','lasik','retina','glaucoma','blind','blur','sight'],r:'<strong>Possible conditions:</strong> Cataract, retinal issue or glaucoma<br/><br/><strong>Recommended specialist:</strong> Ophthalmologist<br/><br/><strong>Top 3 hospitals in India:</strong><ul><li>Aravind Eye Care System, Madurai — $400–$800/eye</li><li>Sankara Nethralaya, Chennai — $500–$1,200/eye</li><li>LV Prasad Eye Institute, Hyderabad — $500–$1,000/eye</li></ul><strong>India vs USA:</strong> Cataract surgery costs $400–$1,200 in India vs $4,000–$7,000 per eye in USA.<br/><br/><strong>Time needed:</strong> 3–5 days.<br/><br/><strong>Next step:</strong> Contact us via +91 9717019785 with your eye examination report.<br/><br/><em>⚠️ General guidance only. Consult a qualified eye doctor.</em>'}
+};
+
+function getOffline(txt){
+  var t=txt.toLowerCase();
+  for(var cat in FALLBACKS){var fb=FALLBACKS[cat];for(var i=0;i<fb.k.length;i++){if(t.includes(fb.k[i]))return fb.r;}}
+  return 'Thank you for sharing that. To give you the most accurate guidance, could you tell me more?<br/><ul><li>Where exactly is the pain or problem?</li><li>How long have you had this?</li><li>Have you seen a doctor? What did they find?</li></ul>Or contact our team directly — we respond within 4 hours:<br/><br/><strong>📱 WhatsApp: +91 9717019785</strong><br/><strong>📧 healinindia@gmail.com</strong><br/><br/><em>⚠️ For urgent symptoms please see a doctor immediately.</em>';
+}
+
+function fmtMD(t){
+  t=t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  t=t.replace(/^\s*[-•]\s(.+)$/gm,'<li>$1</li>');
+  t=t.replace(/<li>([\s\S]*?)<\/li>/g,function(m){return '<ul>'+m+'</ul>';});
+  t=t.replace(/\n\n/g,'<br/><br/>');
+  t=t.replace(/\n/g,'<br/>');
+  return t;
+}
+
+function addBubble(role,html){
+  var msgs=document.getElementById('cbMsgs');
+  var d=document.createElement('div');
+  d.className='bubble'+(role==='user'?' user':'');
+  var av=role==='user'?'👤':'MY';
+  var ac=role==='user'?'user':'ai';
+  var bc=role==='user'?'user':'ai';
+  d.innerHTML='<div class="bav '+ac+'">'+av+'</div><div class="btxt '+bc+'">'+html+'</div>';
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function showTyping(){
+  var msgs=document.getElementById('cbMsgs');
+  var d=document.createElement('div');
+  d.className='bubble';d.id='tdot';
+  d.innerHTML='<div class="bav ai">MY</div><div class="typing"><span></span><span></span><span></span></div>';
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}
+
+function removeTyping(){var t=document.getElementById('tdot');if(t)t.remove();}
+
+function quickMsg(txt){
+  document.getElementById('cbInp').value=txt;
+  sendChat();
+}
+
+async function sendChat(){
+  var inp=document.getElementById('cbInp');
+  var btn=document.getElementById('cbSend');
+  var txt=inp.value.trim();
+  if(!txt)return;
+  addBubble('user',txt.replace(/</g,'&lt;'));
+  history.push({role:'user',content:txt});
+  inp.value='';btn.disabled=true;btn.textContent='...';
+  showTyping();
+
+  if(ANTHROPIC_KEY==='YOUR_ANTHROPIC_API_KEY_HERE'){
+    setTimeout(function(){
+      removeTyping();
+      addBubble('assistant',getOffline(txt));
+      btn.disabled=false;btn.textContent='Send ↗';
+    },1100);
+    return;
+  }
+
+  try{
+    var res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':ANTHROPIC_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:800,system:SYS,messages:history})
+    });
+    var data=await res.json();
+    removeTyping();
+    if(data.content&&data.content[0]){
+      var reply=data.content[0].text;
+      history.push({role:'assistant',content:reply});
+      addBubble('assistant',fmtMD(reply));
+    } else {
+      addBubble('assistant','Connection issue. Please try again or WhatsApp us at +91 9717019785.');
+    }
+  }catch(e){
+    removeTyping();
+    addBubble('assistant',getOffline(txt));
+  }
+  btn.disabled=false;btn.textContent='Send ↗';
+}
+</script>
+</body>
+</html>
